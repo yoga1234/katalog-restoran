@@ -71,7 +71,7 @@ nav {
     border: 1px solid #fff;
     border-radius: 10px;
     width: max-content;
-    background-color: rgba(102, 161, 130, .4);
+    background-color: rgba(102, 161, 130, .6);
 }
 .jumbotron p{
     margin: 15px auto 0 auto;
@@ -83,6 +83,12 @@ nav {
     border: 1px solid #fff;
     border-radius: 10px;
     width: max-content;
-    background-color: rgba(102, 161, 130, .4);
+    background-color: rgba(102, 161, 130, .6);
     letter-spacing: 1px;
+}
+.section-header {
+    margin-top: 40px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    text-align: center;
 }
