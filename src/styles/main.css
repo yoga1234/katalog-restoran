@@ -52,3 +52,37 @@ nav {
 .link-item {
     display: none;
 }
+.jumbotron {
+    background-image: url("../public/images/heros/hero-image_1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: grey;
+    min-height: 350px;
+    width: 100%;
+    padding-top: 100px;
+}
+.jumbotron h1{
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    width: max-content;
+    background-color: rgba(102, 161, 130, .4);
+}
+.jumbotron p{
+    margin: 15px auto 0 auto;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    width: max-content;
+    background-color: rgba(102, 161, 130, .4);
+    letter-spacing: 1px;
+}
