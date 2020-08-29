@@ -55,7 +55,7 @@ nav {
 .jumbotron {
     background-image: url("../public/images/heros/hero-image_1.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: 0 0;
     background-color: grey;
     min-height: 350px;
     width: 100%;
