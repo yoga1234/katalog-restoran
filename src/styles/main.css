@@ -1,3 +1,7 @@
+html, body, main {
+    width: 100%;
+    height: max-content;
+}
 body {
     padding: 0;
     margin: 0;
@@ -162,6 +166,7 @@ nav {
     font-family: Verdana, Geneva, sans-serif;
 }
 footer {
+    width: 100%;
     margin-top: 30px;
     padding: 10px 0;
     height: max-content;
