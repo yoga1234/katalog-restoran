@@ -1,13 +1,14 @@
 body {
     padding: 0;
     margin: 0;
+    background-color: rgba(202, 229, 255, .15);
 }
 header {
     height: max-content;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    background-color: #2E4057;
+    background-color: rgba(111, 138, 183, .8);
 }
 .hamburger-menu {
     grid-column-start: 1;
@@ -21,13 +22,12 @@ header {
     color: #fff;
     border: 3px solid #fff;
     border-radius: 5px;
-    background-color: #2E4057;
-    transition: .4s ease all;
+    background-color: rgba(111, 138, 183, .1);
+    transition: .3s ease all;
     cursor: pointer;
 }
 .hamburger-menu:hover {
-    color: #66A182;
-    border-color: #66A182;
+    background-color: rgba(111, 138, 183, 1);
 }
 .brand-logo {
     grid-column-start: 2;
@@ -76,7 +76,7 @@ nav {
     width: 100%;
     min-width: 180px;
     max-width: 380px;
-    background-color: rgba(102, 161, 130, .6);
+    background-color: rgba(97, 93, 108, .6);
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -93,7 +93,7 @@ nav {
     width: 100%;
     min-width: 180px;
     max-width: 330px;
-    background-color: rgba(102, 161, 130, .6);
+    background-color: rgba(97, 93, 108, .6);
     letter-spacing: 1px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -113,7 +113,7 @@ nav {
     height: max-content;
     width: 100%;
     max-width: 380px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: #fff;
     border-radius: 5px;
     -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
@@ -132,8 +132,9 @@ nav {
 }
 .article-desc {
     margin: 0 auto 25px auto;
-    font-size: 16px;
-    padding: 20px;
+    font-size: 14px;
+    font-family: Verdana, Geneva, sans-serif;
+    padding: 0 20px 20px 20px;
     width: 100%;
     text-align: justify;
     line-height: 1.5;
@@ -147,18 +148,20 @@ nav {
     grid-template-columns: repeat(2, 1fr);
 }
 .article-footer-item {
-    background-color: rgba(46, 64, 87, .15);
+    background-color: #89BBFE;
     margin: 0;
     padding: 15px;
     border: 3px solid #fff;
     border-radius: 5px;
     text-align: center;
+    color: #fff;
+    font-family: Verdana, Geneva, sans-serif;
 }
 footer {
     margin-top: 30px;
     padding: 10px 0;
     height: max-content;
-    background-color: grey;
+    background-color: #89BBFE;
     font-size: 14px;
     text-align: center;
     font-family: "Gill Sans", sans-serif;
