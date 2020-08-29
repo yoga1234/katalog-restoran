@@ -6,9 +6,13 @@ body {
 header {
     height: max-content;
     width: 100%;
+    background-color: rgba(111, 138, 183, .8);
+}
+.header-wrapper {
+    width: 100%;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    background-color: rgba(111, 138, 183, .8);
 }
 .hamburger-menu {
     grid-column-start: 1;
@@ -132,7 +136,7 @@ nav {
 }
 .article-desc {
     margin: 0 auto 5px auto;
-    font-size: 14px;
+    font-size: 13px;
     font-family: Verdana, Geneva, sans-serif;
     padding: 0 20px 20px 20px;
     width: 100%;

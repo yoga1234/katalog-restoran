@@ -42,8 +42,27 @@
     max-width: 350px;
     width: 95%;
   }
+  .article-footer-item {
+    font-size: 14px;
+  }
 }
 
 @media screen and (min-width: 1000px) {
-  
+  .header-wrapper {
+    max-width: 1000px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .article-container {
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+    max-width: 950px;
+  }
+  .section-header {
+    grid-column: 1/4;
+  }
+  .article-footer-item {
+    font-size: 14px;
+  }
 }
