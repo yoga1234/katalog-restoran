@@ -14,7 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
   mainContainer.insertAdjacentHTML("beforeend", dataInsert);
 
   hamburgerMenu.addEventListener("click", function() {
-    console.log("hamburger menu diklik!");
     navigationWrapper.classList.toggle("open");
+  });
+
+  document.addEventListener("click", function(e) {
+    if(e.target.classList != "hamburger-menu") {
+      if(navigationWrapper.classList.contains("open")) {
+        navigationWrapper.classList.remove("open");
+      };
+    };
   });
 });
