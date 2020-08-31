@@ -1,6 +1,5 @@
 const DATA_LOADER = (data) => {
   let dataReturn = "";
-  console.log(data.length);
   for(let i = 0; i < data.length; i++) {
     if(data[i].description.length > 150) {
       data[i].description = data[i].description.substring(0, 150) + "..."
