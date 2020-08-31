@@ -1,4 +1,7 @@
 @media screen and (min-width: 800px) {
+  .header-wrapper {
+    display: grid;
+  }
   .hamburger-menu {
     width: 0;
     height: 0;
@@ -7,10 +10,13 @@
   .brand-logo {
     grid-column-start: 1;
     grid-column-end: 5;
-    padding: 5px;
+    padding: 5px 5px 5px 25px;
   }
   nav {
-    grid-column-start: 9;
+    position: inherit;
+    grid-column-start: 10;
+    background-color: inherit;
+    transform: translate(0, 0);
   }
   .navigation-items {
     padding: 0;
@@ -21,6 +27,8 @@
   .link-item {
     display: inline-block;
     padding: 20px 15px 0 0;
+    border: none;
+    margin: 0;
   }
   .link-item a{
     text-decoration: none;

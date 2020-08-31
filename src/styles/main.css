@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 html, body, main {
     width: 100%;
     height: max-content;
@@ -48,17 +51,38 @@ header {
     padding-left: 10px;
 }
 nav {
-    height: 0;
-    width: 0;
+    position: absolute;
+    transform: translate(-250px, 0);
+    top: 70px;
+    left: 5px;
+    width: max-content;
+    height: max-content;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: .3s ease all;
+}
+.open {
+    transform: translate(0, 0);
+}
+.link-item {
+    margin: 25px;
+    padding: 10px 30px 10px 30px;
+    border: 3px solid rgba(111, 138, 183, 1);
+    border-radius: 10px;
+    text-align: center;
+}
+.link-item a{
+    text-decoration: none;
+    color: rgba(111, 138, 183, 1);
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 .navigation-items {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 .navigation-items li{
     text-decoration: none;
-}
-.link-item {
-    display: none;
 }
 .jumbotron {
     background-image: url("../public/images/heros/hero-image_1.jpg");
@@ -67,7 +91,7 @@ nav {
     background-color: grey;
     min-height: 350px;
     width: 100%;
-    padding: 100px 30px 0 30px;
+    padding: 200px 30px 200px 30px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
