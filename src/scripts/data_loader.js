@@ -7,12 +7,12 @@ const DATA_LOADER = (data) => {
 
     dataReturn += `
        <article class="card-article">
-        <img class="article-image" src="${data[i].pictureId}" alt="Kafe dengan nama ${data[i].name}">
-        <h3 class="article-title">${data[i].name}</h3>
-        <p class="article-desc">${data[i].description}</p>
+        <img class="article-image" src="${data[i].pictureId}" alt="Kafe dengan nama ${data[i].name}" tabindex="0">
+        <h3 class="article-title" tabindex="0">${data[i].name}</h3>
+        <p class="article-desc" tabindex="0">${data[i].description}</p>
         <div class="article-footer">
-          <p class="article-footer-item">City: ${data[i].city}</p>
-          <p class="article-footer-item">Rating: ${data[i].rating}/5</p>
+          <p class="article-footer-item" tabindex="0">City: ${data[i].city}</p>
+          <p class="article-footer-item" tabindex="0">Rating: ${data[i].rating}/5</p>
         </div>
        </article>
      `
