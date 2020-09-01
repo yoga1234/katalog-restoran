@@ -37,7 +37,7 @@
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     transition: .3s ease all;
   }
-  .link-item a:hover, .link-item a:focus {
+  .link-item a:hover, .link-item:focus {
     background-color: rgba(256, 256, 256, .25);
     border-radius: 5px;
     outline: none;
