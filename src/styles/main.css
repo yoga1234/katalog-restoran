@@ -88,6 +88,7 @@ nav:focus-within {
 }
 .link-item:focus {
     background-color: rgba(111, 138, 183, .2);
+    
     outline: none;
 }
 .link-item a{
@@ -223,7 +224,7 @@ nav:focus-within {
     height: max-content;
     grid-template-columns: repeat(2, 1fr);
 }
-.article-footer-item {
+.article-footer-item-1, .article-footer-item-2{
     background-color: #89BBFE;
     margin: 0;
     padding: 15px;
@@ -232,6 +233,11 @@ nav:focus-within {
     text-align: center;
     color: #fff;
     font-family: Verdana, Geneva, sans-serif;
+    transition: .2s ease all;
+}
+.article-footer-item-1:focus, .article-footer-item-2:focus{
+    border-right: 5px solid rgba(0, 128, 0, 0.2);
+    outline: none;
 }
 footer {
     width: 100%;
