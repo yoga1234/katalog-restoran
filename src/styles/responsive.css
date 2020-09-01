@@ -10,7 +10,7 @@
   .brand-logo {
     grid-column-start: 1;
     grid-column-end: 5;
-    padding: 5px 5px 5px 25px;
+    padding: 5px 25px 5px 25px;
   }
   nav {
     position: inherit;
@@ -26,15 +26,21 @@
   }
   .link-item {
     display: inline-block;
-    padding: 20px 15px 0 0;
     border: none;
     margin: 0;
   }
   .link-item a{
+    padding: 20px 15px 20px 15px;
     text-decoration: none;
-    display: inline;
+    display: inline-block;
     color: #fff;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    transition: .3s ease all;
+  }
+  .link-item a:hover, .link-item a:focus {
+    background-color: rgba(256, 256, 256, .25);
+    border-radius: 5px;
+    outline: none;
   }
   .article-container {
     display: grid;

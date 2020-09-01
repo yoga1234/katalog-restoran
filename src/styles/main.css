@@ -37,8 +37,11 @@ header {
     transition: .3s ease all;
     cursor: pointer;
 }
+.hamburger-menu:focus {
+    background-color: rgba(204, 230, 255, 0.7);     
+}
 .hamburger-menu:hover {
-    background-color: rgba(111, 138, 183, 1);
+    background-color: rgba(204, 230, 255, 0.7);
 }
 .brand-logo {
     grid-column-start: 2;
@@ -48,8 +51,14 @@ header {
     text-decoration: none;
     color: #fff;
     margin: auto;
-    padding-left: 10px;
+    padding: 0 10px 0 10px;
+    transition: .3s ease all;
 }
+.brand-logo:focus {
+    border-radius: 5px;
+    background-color: rgba(256, 256, 256, .15);
+    outline: none;
+  }
 nav {
     position: absolute;
     transform: translate(-250px, 0);
@@ -61,17 +70,29 @@ nav {
     border-radius: 10px;
     transition: .3s ease all;
 }
+nav:focus-within {
+    transform: translate(0, 0);
+}
 .open {
     transform: translate(0, 0);
 }
 .link-item {
     margin: 25px;
-    padding: 10px 30px 10px 30px;
     border: 3px solid rgba(111, 138, 183, 1);
     border-radius: 10px;
     text-align: center;
+    transition: .2s ease background-color;
+}
+.link-item:hover {
+    background-color: rgba(111, 138, 183, .2);
+}
+.link-item:focus {
+    background-color: rgba(111, 138, 183, .2);
+    outline: none;
 }
 .link-item a{
+    display: inline-block;
+    padding: 10px 30px 10px 30px;
     text-decoration: none;
     color: rgba(111, 138, 183, 1);
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -92,9 +113,6 @@ nav {
     min-height: 350px;
     width: 100%;
     padding: 200px 30px 200px 30px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 }
 .jumbotron h1{
     margin: auto;
@@ -109,9 +127,11 @@ nav {
     min-width: 180px;
     max-width: 380px;
     background-color: rgba(97, 93, 108, .6);
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    transition: .2s ease all;
+}
+.jumbotron h1:focus {
+    background-color: rgba(97, 93, 108, 1);
+    outline: none;
 }
 .jumbotron p{
     margin: 15px auto 0 auto;
@@ -127,9 +147,6 @@ nav {
     max-width: 330px;
     background-color: rgba(97, 93, 108, .6);
     letter-spacing: 1px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 }
 .article-container {
     padding: 0 50px;
