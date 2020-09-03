@@ -7,7 +7,9 @@ const DATA_LOADER = (data) => {
 
     dataReturn += `
        <article class="card-article">
-        <img class="article-image" src="${data[i].pictureId}" alt="Kafe dengan nama ${data[i].name}" tabindex="0">
+        <figure>
+          <img class="article-image" src="${data[i].pictureId}" alt="Kafe dengan nama ${data[i].name}" tabindex="0">
+        </figure>
         <h3 class="article-title" tabindex="0">${data[i].name}</h3>
         <p class="article-desc" tabindex="0">${data[i].description}</p>
         <div class="article-footer">

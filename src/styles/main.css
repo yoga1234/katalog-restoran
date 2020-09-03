@@ -100,13 +100,12 @@ nav:focus-within {
 .link-item:hover {
     background-color: rgba(111, 138, 183, .2);
 }
-.link-item:focus {
+.link-item a:focus {
     background-color: rgba(111, 138, 183, .2);
-    
     outline: none;
 }
 .link-item a{
-    display: inline-block;
+    display: block;
     padding: 10px 30px 10px 30px;
     text-decoration: none;
     color: rgba(111, 138, 183, 1);
@@ -195,9 +194,15 @@ nav:focus-within {
     -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
 }
+figure {
+    margin: 0;
+    padding: 0;
+}
+figcaption {
+    margin: 5px 0 0 10px;
+}
 .article-image {
     width: 100%;
-    height: 250px;
     border: 1px solid pink;
     transition: .25s ease all;
 }
@@ -209,6 +214,8 @@ nav:focus-within {
     text-align: center;
     font-family: Verdana, Geneva, sans-serif;
     font-weight: lighter;
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: 22px;
     transition: .25s ease all;
 }
