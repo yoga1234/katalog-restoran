@@ -38,7 +38,7 @@
     transition: .3s ease all;
   }
   .link-item a:hover, .link-item a:focus {
-    background-color: rgba(256, 256, 256, .25);
+    background-color: rgba(241, 250, 238, .2);
     border-radius: 5px;
     outline: none;
   }
@@ -56,6 +56,8 @@
   }
   .section-header {
     grid-column: 1/3;
+    font-size: 35px;
+    font-weight: 300;
   }
   .card-article {
     display: inherit;
@@ -79,6 +81,9 @@
 @media screen and (min-width: 1000px) {
   .header-wrapper {
     max-width: 1000px;
+  }
+  .section-header {
+    font-size: 45px;
   }
 }
 
