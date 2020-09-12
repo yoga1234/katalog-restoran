@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 
   document.addEventListener("click", function(e) {
-    if(e.target.classList != "hamburger-menu") {
+    if(String(e.target.classList) !== "hamburger-menu") {
       if(navigationWrapper.classList.contains("open")) {
         navigationWrapper.classList.remove("open");
-      };
-    };
+      }
+    }
   });
 });
