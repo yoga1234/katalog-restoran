@@ -361,7 +361,8 @@ figcaption {
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
 }
 .fork-image {
-    border: 1px solid #f1faee;
+    border: 7px solid #f1faee;
+    border-radius: 15px;
     margin: auto;
     padding: 75px;
     background-image: url('../public/images/svg/fork.png');
@@ -374,7 +375,8 @@ figcaption {
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
 }
 .medal-image {
-    border: 1px solid #f1faee;
+    border: 7px solid #f1faee;
+    border-radius: 15px;
     margin: auto;
     padding: 75px;
     background-image: url('../public/images/svg/medal.png');
