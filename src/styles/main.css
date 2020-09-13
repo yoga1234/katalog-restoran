@@ -32,7 +32,8 @@ header {
     position: absolute;
     top: -100px;
     padding: 15px;
-    border: 3px solid rgba(39, 238, 39, 0.6);
+    border: 3px solid #1d3557;
+    font-family: 'Roboto', sans-serif;
     background-color: #fff;
     border-radius: 10px;
     text-decoration: none;
@@ -171,6 +172,42 @@ nav:focus-within {
     width: max-content;
     min-width: 180px;
     transition: .2s ease all;
+}
+.who-we-are-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 130px;
+}
+.who-we-are-left {
+    width: 60%;
+    margin: 40px auto 0 auto;
+}
+.who-we-are-left h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #1d3557;
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+.who-we-are-left p {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #1d3557;
+}
+.who-we-are-right {
+    border: 15px solid #457b9d;
+    border-radius: 10px;
+    width: 60%;
+    height: 100px;
+    margin: 20px auto 0 auto;
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
 }
 .article-container {
     padding: 0 50px;

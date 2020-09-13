@@ -48,6 +48,20 @@
   .jumbotron p {
     font-size: 90px;
   }
+  .who-we-are-section {
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto 50px auto;
+  }
+  .who-we-are-left {
+    width: 100%;
+  }
+  .who-we-are-right {
+    margin-top: 50px;
+    height: 80%;
+    width: 80%;
+  }
   .article-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
