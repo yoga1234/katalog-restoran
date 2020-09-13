@@ -42,10 +42,10 @@
     border-radius: 5px;
     outline: none;
   }
-  .jumbotron p {
+  .jumbotron h1 {
     font-size: 25px;
   }
-  .jumbotron h1 {
+  .jumbotron p {
     font-size: 90px;
   }
   .article-container {
@@ -75,6 +75,12 @@
   }
   .article-footer-item {
     font-size: 14px;
+  }
+  .out-text {
+    font-size: 35px;
+  }
+  .service-text {
+    font-size: 60px;
   }
 }
 
