@@ -76,6 +76,17 @@
   .article-footer-item {
     font-size: 14px;
   }
+  .our-service-card {
+    margin: 80px auto 0 auto;
+    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+  }
+  .friendly-staff-article,
+  .next-level-food-article,
+  .proven-quality-article {
+    width: 95%;
+  }
   .out-text {
     font-size: 35px;
   }
