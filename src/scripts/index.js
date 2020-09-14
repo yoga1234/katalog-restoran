@@ -4,23 +4,35 @@ import '../styles/responsive.css'
 
 import * as DATA from '../DATA.json'
 import DATA_LOADER from './data_loader.js'
+import urlParser from './routes/url-parser'
 
+import skipToContent from './utils/skip-to-content-event'
 import hamburgerMenuInitiator from './utils/hamburger-menu-initiator'
 
 document.addEventListener('DOMContentLoaded', function () {
-  const mainContainer = document.getElementById('main-container')
+  const mainContent = document.getElementById('maincontent')
   const navigationWrapper = document.getElementById('navigation-wrapper')
   const hamburgerMenu = document.querySelector('.hamburger-menu')
-  const skipToContent = document.querySelector('.skip-to-content')
+  const skipToContentElement = document.querySelector('.skip-to-content')
   const sectionHeader = document.querySelector('.section-header')
-  const dataInsert = DATA_LOADER(DATA.restaurants)
 
-  mainContainer.insertAdjacentHTML('beforeend', dataInsert)
+  // mainContainer.insertAdjacentHTML('beforeend', dataInsert)
 
-  skipToContent.addEventListener('keypress', function () {
-    console.log(sectionHeader)
-    sectionHeader.focus()
-  })
+  skipToContent({ skipToContentElement, sectionHeader })
 
   hamburgerMenuInitiator({ hamburgerMenu, navigationWrapper })
+
+  window.addEventListener('hashchange', (e) => {
+    if (window.location.hash !== '#maincontent') {
+      mainContent.innerHTML = urlParser.getHashUrl()
+    }
+  })
+
+  window.addEventListener('load', () => {
+    if (window.location.hash === '#maincontent') {
+      window.location.hash = '#home'
+      return
+    }
+    mainContent.innerHTML = urlParser.getHashUrl()
+  })
 })
