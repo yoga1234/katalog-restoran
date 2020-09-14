@@ -176,7 +176,6 @@ nav:focus-within {
 .who-we-are-section {
     display: grid;
     grid-template-columns: 1fr;
-    margin-bottom: 130px;
 }
 .who-we-are-left {
     width: 60%;
