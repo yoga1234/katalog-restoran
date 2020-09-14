@@ -16,8 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const skipToContentElement = document.querySelector('.skip-to-content')
   const sectionHeader = document.querySelector('.section-header')
 
-  // mainContainer.insertAdjacentHTML('beforeend', dataInsert)
-
   skipToContent({ skipToContentElement, sectionHeader })
 
   hamburgerMenuInitiator({ hamburgerMenu, navigationWrapper })

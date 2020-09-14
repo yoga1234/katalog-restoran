@@ -1,6 +1,8 @@
 import homePage from '../views/pages/home'
 import favoritePage from '../views/pages/favorite'
 
+import getListRestaurant from '../data/restaurant-data-source'
+
 const urlParser = {
   getHashUrl () {
     const url = window.location.hash.slice(1).toLowerCase()
@@ -17,6 +19,7 @@ const urlParser = {
   },
 
   renderHomePage () {
+    console.log(getListRestaurant())
     return homePage()
   },
 
