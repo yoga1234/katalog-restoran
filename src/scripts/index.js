@@ -5,6 +5,8 @@ import '../styles/responsive.css'
 import * as DATA from '../DATA.json'
 import DATA_LOADER from './data_loader.js'
 
+import hamburgerMenuInitiator from './utils/hamburger-menu-initiator'
+
 document.addEventListener('DOMContentLoaded', function () {
   const mainContainer = document.getElementById('main-container')
   const navigationWrapper = document.getElementById('navigation-wrapper')
@@ -15,20 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   mainContainer.insertAdjacentHTML('beforeend', dataInsert)
 
-  hamburgerMenu.addEventListener('click', function () {
-    navigationWrapper.classList.toggle('open')
-  })
-
   skipToContent.addEventListener('keypress', function () {
     console.log(sectionHeader)
     sectionHeader.focus()
   })
 
-  document.addEventListener('click', function (e) {
-    if (String(e.target.classList) !== 'hamburger-menu') {
-      if (navigationWrapper.classList.contains('open')) {
-        navigationWrapper.classList.remove('open')
-      }
-    }
-  })
+  hamburgerMenuInitiator({ hamburgerMenu, navigationWrapper })
 })
