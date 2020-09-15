@@ -19,7 +19,7 @@ const urlParser = {
   },
 
   renderHomePage () {
-    console.log(getListRestaurant())
+    // const result = await getListRestaurant()
     return homePage()
   },
 

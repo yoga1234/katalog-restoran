@@ -2,8 +2,6 @@ import 'regenerator-runtime' /* for async await transpile */
 import '../styles/main.css'
 import '../styles/responsive.css'
 
-import * as DATA from '../DATA.json'
-import DATA_LOADER from './data_loader.js'
 import urlParser from './routes/url-parser'
 
 import skipToContent from './utils/skip-to-content-event'

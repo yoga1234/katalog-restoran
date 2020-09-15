@@ -212,6 +212,7 @@ nav:focus-within {
     padding: 0 50px;
 }
 .section-header {
+    overflow: hidden;
     margin: 90px auto 50px auto;
     width: max-content;
     padding: 10px 0 10px 15px;
@@ -227,6 +228,35 @@ nav:focus-within {
     outline: none;
     background-color: rgba(0,0,0,0.1);
     border-radius: 10px;
+}
+.home-content {
+    width: 100%;
+    margin: auto;
+}
+.loading-data {
+    position: relative;
+    top: 100px;
+    z-index: 1;
+    margin: -75px auto 0 auto;
+    border: 16px solid #e63946;
+    border-radius: 50%;
+    border-top: 16px solid #1d3557;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 3s linear infinite;
+}
+.loading-text {
+    position: relative;
+    text-align: center;
+    top: 17px;
+    left: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 .card-article {
     margin: 0 auto 25px auto;
@@ -313,7 +343,7 @@ figcaption {
 }
 /* our service */
 .first-hr{
-    margin-top: 100px;
+    margin-top: 150px;
     width: 85%;
     border: 1px solid #457b9d;
     opacity: .2;
@@ -328,13 +358,14 @@ figcaption {
     -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
 }
-.our-text{
+.restaurant-text{
     margin: 0;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     font-size: 30px;
     letter-spacing: 4px;
+    color: #1d3557
 } 
 .service-text {
     margin: 0;
@@ -343,6 +374,7 @@ figcaption {
     font-size: 50px;
     font-weight: 300;
     letter-spacing: 10px;
+    color: #1d3557;
 }
 .our-service-card {
     display: grid;
@@ -371,6 +403,7 @@ figcaption {
     margin-top: 40px;
     margin-bottom: 10px;
     font-size: 25px;
+    color: #1d3557;
 }
 .friendly-staff-article span,
 .next-level-food-article span,
@@ -381,6 +414,7 @@ figcaption {
     text-align: center;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 300;
+    color: #1d3557;
 }
 .group-image {
     border: 7px solid #f1faee;

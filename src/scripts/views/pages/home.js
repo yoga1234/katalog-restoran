@@ -1,4 +1,5 @@
-const homePage = () => {
+const homePage = (data = 'empty') => {
+  console.log('this is from homepage' + data.restaurants)
   return `
     <section class="who-we-are-section">
       <div class="who-we-are-left">
@@ -11,13 +12,16 @@ const homePage = () => {
     </section>
     <section id="main-container" class="article-container">
       <h2 class="section-header">Restaurant Registered</h2>
+      <div class="loading-animation">
+        <div class="loading-data"></div>
+        <p class="loading-text">LOADING...</p>
+      </div>
       <div class="home-content">
-
       </div>
     </section>
     <section class="our-service">
       <hr class="first-hr">
-      <h2 class="our-text">RESTAURANT</h2>
+      <h2 class="restaurant-text">RESTAURANT</h2>
       <p class="service-text">SERVICE</p>
       <hr class="second-hr">
       <div class="our-service-card">
