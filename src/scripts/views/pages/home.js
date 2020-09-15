@@ -28,8 +28,7 @@ const homePage = (data) => {
             <p class="article-footer-item-1">${restaurant.city}</p>
             <p class="article-footer-item-2">Rating: ${restaurant.rating}/5</p>
           </div>
-        </article>
-      `
+        </article>`
     })
     dataHome += `
       </div>
@@ -49,6 +48,11 @@ const homePage = (data) => {
     <section id="main-container" class="article-container">
       <h2 class="section-header">Restaurant Registered</h2>
       ${dataHome}
+      <div class="pagination">
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+      <div>page number goes here</div>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </div>
     </section>
     <section class="our-service">
       <hr class="first-hr">

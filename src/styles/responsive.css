@@ -139,9 +139,6 @@
   .card-article {
     max-width: 500px;
   }
-  .section-header {
-    grid-column: 1/4;
-  }
   .article-footer-item {
     font-size: 14px;
   }
