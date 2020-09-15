@@ -18,17 +18,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
   hamburgerMenuInitiator({ hamburgerMenu, navigationWrapper })
 
-  window.addEventListener('hashchange', (e) => {
+  window.addEventListener('hashchange', async (e) => {
     if (window.location.hash !== '#maincontent') {
-      mainContent.innerHTML = urlParser.getHashUrl()
+      mainContent.innerHTML = urlParser.loadPage()
+
+      const dataDOM = await urlParser.renderData()
+      console.log(dataDOM)
+      mainContent.innerHTML = urlParser.loadPage(dataDOM)
     }
   })
 
-  window.addEventListener('load', () => {
+  window.addEventListener('load', async () => {
     if (window.location.hash === '#maincontent') {
       window.location.hash = '#home'
       return
     }
-    mainContent.innerHTML = urlParser.getHashUrl()
+
+    mainContent.innerHTML = urlParser.loadPage()
+
+    const dataDOM = await urlParser.renderData()
+    console.log(dataDOM)
+    mainContent.innerHTML = urlParser.loadPage(dataDOM)
   })
 })

@@ -1,5 +1,5 @@
 const homePage = (data = 'empty') => {
-  console.log('this is from homepage' + data.restaurants)
+  console.log('this is from homepage' + data)
   return `
     <section class="who-we-are-section">
       <div class="who-we-are-left">

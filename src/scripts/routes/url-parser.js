@@ -4,26 +4,30 @@ import favoritePage from '../views/pages/favorite'
 import getListRestaurant from '../data/restaurant-data-source'
 
 const urlParser = {
-  getHashUrl () {
+  loadPage (data) {
     const url = window.location.hash.slice(1).toLowerCase()
     switch (url) {
       case '':
-        return this.renderHomePage()
+        return this.HomePage(data)
       case 'home':
-        return this.renderHomePage()
+        return this.HomePage(data)
       case 'favorite':
-        return this.renderFavoritePage()
+        return this.FavoritePage()
       default:
-        return this.renderHomePage()
+        return this.HomePage(data)
     }
   },
 
-  renderHomePage () {
-    // const result = await getListRestaurant()
-    return homePage()
+  async renderData () {
+    const data = getListRestaurant()
+    return data
   },
 
-  renderFavoritePage () {
+  HomePage (data) {
+    return homePage(data)
+  },
+
+  FavoritePage () {
     return favoritePage()
   }
 }
