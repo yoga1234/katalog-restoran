@@ -1,5 +1,5 @@
 const homePage = (data) => {
-  let dataHome
+  let dataHome = ''
   if (data === 'empty') {
     dataHome = `
       <div class="loading-animation">
@@ -14,15 +14,18 @@ const homePage = (data) => {
       <div class="home-content">
     `
     data.restaurants.forEach(restaurant => {
+      if (restaurant.description.length > 150) {
+        restaurant.description = restaurant.description.substring(0, 120) + '...'
+      }
       dataHome += `
         <article class="card-article">
           <figure>
-            <img class="article-image" src="${restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}">
+            <img class="article-image" src="https://dicoding-restaurant-api.el.r.appspot.com/images/small/${restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}">
           </figure>
           <h3 class="article-title">${restaurant.name}</h3>
           <p class="article-desc">${restaurant.description}</p>
           <div class="article-footer">
-            <p class="article-footer-item-1">City: ${restaurant.city}</p>
+            <p class="article-footer-item-1">${restaurant.city}</p>
             <p class="article-footer-item-2">Rating: ${restaurant.rating}/5</p>
           </div>
         </article>
