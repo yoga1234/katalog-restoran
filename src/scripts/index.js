@@ -34,10 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
       return
     }
 
-    mainContent.innerHTML = urlParser.loadPage()
+    mainContent.innerHTML = urlParser.loadPage('empty')
 
     const dataDOM = await urlParser.renderData()
-    console.log(dataDOM)
     mainContent.innerHTML = urlParser.loadPage(dataDOM)
   })
 })

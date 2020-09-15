@@ -1,5 +1,38 @@
-const homePage = (data = 'empty') => {
-  console.log('this is from homepage' + data)
+const homePage = (data) => {
+  let dataHome
+  if (data === 'empty') {
+    dataHome = `
+      <div class="loading-animation">
+        <div class="loading-data"></div>
+          <p class="loading-text">LOADING...</p>
+        </div>
+        <div class="home-content">
+      </div>
+    `
+  } else {
+    dataHome += `
+      <div class="home-content">
+    `
+    data.restaurants.forEach(restaurant => {
+      dataHome += `
+        <article class="card-article">
+          <figure>
+            <img class="article-image" src="${restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}">
+          </figure>
+          <h3 class="article-title">${restaurant.name}</h3>
+          <p class="article-desc">${restaurant.description}</p>
+          <div class="article-footer">
+            <p class="article-footer-item-1">City: ${restaurant.city}</p>
+            <p class="article-footer-item-2">Rating: ${restaurant.rating}/5</p>
+          </div>
+        </article>
+      `
+    })
+    dataHome += `
+      </div>
+    `
+  }
+
   return `
     <section class="who-we-are-section">
       <div class="who-we-are-left">
@@ -12,12 +45,7 @@ const homePage = (data = 'empty') => {
     </section>
     <section id="main-container" class="article-container">
       <h2 class="section-header">Restaurant Registered</h2>
-      <div class="loading-animation">
-        <div class="loading-data"></div>
-        <p class="loading-text">LOADING...</p>
-      </div>
-      <div class="home-content">
-      </div>
+      ${dataHome}
     </section>
     <section class="our-service">
       <hr class="first-hr">
