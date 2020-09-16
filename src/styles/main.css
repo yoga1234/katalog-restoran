@@ -341,6 +341,34 @@ figcaption {
     border-right: 5px solid rgba(0, 128, 0, 0.2);
     outline: none;
 }
+/* pagination */
+.pagination {
+    display: flex;
+    width: max-content;
+    margin: 100px auto 0 auto;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.pagination a {
+    margin: 5px;
+    padding: 10px 15px 10px 15px;
+    border: 2px solid #457b9d;
+    border-radius: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #1d3557;
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.15);
+    transition:.3s all ease;
+}
+.pagination a:hover {
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
+}
+.pagination-arrow {
+    font-size: 30px;
+}
 /* our service */
 .first-hr{
     margin-top: 150px;
