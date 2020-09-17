@@ -370,6 +370,13 @@ figcaption {
     -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
 }
+.pagination-disabled {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: #000;
+    opacity: .3;
+}
 .pagination a:hover {
     -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
     -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);

@@ -2,8 +2,8 @@ import paginationSystem from '../../utils/pagination-system'
 
 const homePage = (data, homeActivePage) => {
   const page = paginationSystem(data.count, homeActivePage)
-  data = 'empty'
   let dataHome = ''
+  let itemCounter = 1
   if (data === 'empty') {
     dataHome = `
       <div class="loading-animation">
@@ -17,23 +17,30 @@ const homePage = (data, homeActivePage) => {
     dataHome += `
       <div class="home-content">
     `
-    data.restaurants.forEach(restaurant => {
+
+    for (const restaurant of data.restaurants) {
       if (restaurant.description.length > 150) {
         restaurant.description = restaurant.description.substring(0, 120) + '...'
       }
-      dataHome += `
-        <article class="card-article">
-          <figure>
-            <img class="article-image" src="https://dicoding-restaurant-api.el.r.appspot.com/images/small/${restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}">
-          </figure>
-          <h3 class="article-title">${restaurant.name}</h3>
-          <p class="article-desc">${restaurant.description}</p>
-          <div class="article-footer">
-            <p class="article-footer-item-1">${restaurant.city}</p>
-            <p class="article-footer-item-2">Rating: ${restaurant.rating}/5</p>
-          </div>
-        </article>`
-    })
+      if (itemCounter <= 9) {
+        console.log(restaurant.name)
+        dataHome += `
+          <article class="card-article">
+            <figure>
+              <img class="article-image" src="https://dicoding-restaurant-api.el.r.appspot.com/images/small/${restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}">
+            </figure>
+            <h3 class="article-title">${restaurant.name}</h3>
+            <p class="article-desc">${restaurant.description}</p>
+            <div class="article-footer">
+              <p class="article-footer-item-1">${restaurant.city}</p>
+              <p class="article-footer-item-2">Rating: ${restaurant.rating}/5</p>
+            </div>
+          </article>`
+        itemCounter++
+      } else {
+        break
+      }
+    }
     dataHome += `
       </div>
     `
@@ -53,9 +60,7 @@ const homePage = (data, homeActivePage) => {
       <h2 class="section-header">Restaurant Registered</h2>
       ${dataHome}
       <div class="pagination">
-        <a href="#" class="pagination-page"><i class="fa fa-angle-left pagination-arrow" aria-hidden="true"></i></a>
         ${page}
-        <a href="#" class="pagination-page"><i class="fa fa-angle-right pagination-arrow" aria-hidden="true"></i></a>
       </div>
     </section>
     <section class="our-service">
