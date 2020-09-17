@@ -6,6 +6,7 @@ import urlParser from './routes/url-parser'
 
 import skipToContent from './utils/skip-to-content-event'
 import hamburgerMenuInitiator from './utils/hamburger-menu-initiator'
+import pageBehaviour from './utils/paginationBehaviour'
 
 document.addEventListener('DOMContentLoaded', function () {
   const mainContent = document.getElementById('maincontent')
@@ -20,20 +21,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('hashchange', async (e) => {
     const activePage = document.querySelector('.active-page') ? document.querySelector('.active-page') : 1
-    console.log(activePage)
+    console.log('hashchange' + activePage)
     if (window.location.hash !== '#maincontent') {
-      mainContent.innerHTML = await urlParser.loadPage()
+      mainContent.innerHTML = await urlParser.loadPage(activePage)
     }
+    pageBehaviour()
   })
 
   window.addEventListener('load', async () => {
     const activePage = document.querySelector('.active-page') ? document.querySelector('.active-page') : 1
-
+    console.log('load' + activePage)
     if (window.location.hash === '#maincontent') {
       window.location.hash = '#home'
       return
     }
 
     mainContent.innerHTML = await urlParser.loadPage(activePage)
+    pageBehaviour()
   })
 })
