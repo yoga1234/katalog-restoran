@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('load', async () => {
     const homeActivePage = document.querySelector('.home-active-page') ? document.querySelector('.home-active-page') : 1
-    console.log('index', homeActivePage)
+
     if (window.location.hash === '#maincontent') {
       window.location.hash = '#home'
       return
@@ -40,5 +40,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const dataDOM = await urlParser.renderData()
     mainContent.innerHTML = urlParser.loadPage(dataDOM, homeActivePage)
+
+    const paginationPage = document.querySelectorAll('.pagination-page')
+    for (let i = 0; i < paginationPage.length; i++) {
+      paginationPage[i].addEventListener('click', function (e) {
+        e.preventDefault()
+        console.log('you are pressing' + paginationPage[i].innerHTML)
+      })
+    }
   })
 })

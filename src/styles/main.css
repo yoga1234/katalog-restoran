@@ -345,7 +345,7 @@ figcaption {
 .pagination {
     display: flex;
     width: max-content;
-    margin: 100px auto 0 auto;
+    margin: 25px auto 0 auto;
     font-family: 'Noto Sans JP', sans-serif;
 }
 .pagination-page {

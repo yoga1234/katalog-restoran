@@ -17,7 +17,6 @@ const homePage = (data, homeActivePage) => {
     dataHome += `
       <div class="home-content">
     `
-
     for (const restaurant of data.restaurants) {
       if (restaurant.description.length > 150) {
         restaurant.description = restaurant.description.substring(0, 120) + '...'
