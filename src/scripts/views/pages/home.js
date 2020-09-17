@@ -22,7 +22,6 @@ const homePage = (data, homeActivePage) => {
         restaurant.description = restaurant.description.substring(0, 120) + '...'
       }
       if (itemCounter <= 9) {
-        console.log(restaurant.name)
         dataHome += `
           <article class="card-article">
             <figure>
