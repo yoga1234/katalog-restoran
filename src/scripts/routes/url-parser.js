@@ -4,13 +4,14 @@ import favoritePage from '../views/pages/favorite'
 import getListRestaurant from '../data/restaurant-data-source'
 
 const urlParser = {
-  loadPage (data) {
+  loadPage (data, activePage) {
     const url = window.location.hash.slice(1).toLowerCase()
     switch (url) {
       case '':
-        return this.HomePage(data)
+        window.location.hash = 'home'
+        break
       case 'home':
-        return this.HomePage(data)
+        return this.HomePage(data, activePage)
       case 'favorite':
         return this.FavoritePage()
       default:
@@ -23,8 +24,8 @@ const urlParser = {
     return data
   },
 
-  HomePage (data) {
-    return homePage(data)
+  HomePage (data, activePage) {
+    return homePage(data, activePage)
   },
 
   FavoritePage () {

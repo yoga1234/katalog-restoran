@@ -29,14 +29,16 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   window.addEventListener('load', async () => {
+    const homeActivePage = document.querySelector('.home-active-page') ? document.querySelector('.home-active-page') : 1
+    console.log('index', homeActivePage)
     if (window.location.hash === '#maincontent') {
       window.location.hash = '#home'
       return
     }
 
-    mainContent.innerHTML = urlParser.loadPage('empty')
+    mainContent.innerHTML = urlParser.loadPage('empty', homeActivePage)
 
     const dataDOM = await urlParser.renderData()
-    mainContent.innerHTML = urlParser.loadPage(dataDOM)
+    mainContent.innerHTML = urlParser.loadPage(dataDOM, homeActivePage)
   })
 })

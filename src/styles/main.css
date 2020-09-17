@@ -348,7 +348,7 @@ figcaption {
     margin: 100px auto 0 auto;
     font-family: 'Noto Sans JP', sans-serif;
 }
-.pagination a {
+.pagination-page {
     margin: 5px;
     padding: 10px 15px 10px 15px;
     border: 2px solid #457b9d;
@@ -356,10 +356,19 @@ figcaption {
     font-size: 20px;
     text-decoration: none;
     color: #1d3557;
-    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.15);
-    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
     transition:.3s all ease;
+}
+.home-active-page {
+    background-color: #457b9d;
+    color: #f1faee;
+    border: 1px solid #1d3557;
+    /* border-color: #1d3557; */
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
 }
 .pagination a:hover {
     -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);

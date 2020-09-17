@@ -1,10 +1,7 @@
 import paginationSystem from '../../utils/pagination-system'
 
-const homePage = (data) => {
-  const pageToShow = Math.floor(data.count / 9)
-  const remainderPageToShow = ((data.count % 9) > 0) ? 1 : 0
-  const totalPageToShow = (pageToShow + remainderPageToShow)
-  const page = paginationSystem(totalPageToShow)
+const homePage = (data, homeActivePage) => {
+  const page = paginationSystem(data.count, homeActivePage)
   data = 'empty'
   let dataHome = ''
   if (data === 'empty') {
@@ -56,9 +53,9 @@ const homePage = (data) => {
       <h2 class="section-header">Restaurant Registered</h2>
       ${dataHome}
       <div class="pagination">
-        <a href="#"><i class="fa fa-angle-left pagination-arrow" aria-hidden="true"></i></a>
+        <a href="#" class="pagination-page"><i class="fa fa-angle-left pagination-arrow" aria-hidden="true"></i></a>
         ${page}
-        <a href="#"><i class="fa fa-angle-right pagination-arrow" aria-hidden="true"></i></a>
+        <a href="#" class="pagination-page"><i class="fa fa-angle-right pagination-arrow" aria-hidden="true"></i></a>
       </div>
     </section>
     <section class="our-service">
