@@ -1,19 +1,20 @@
 import paginationSystem from '../../utils/pagination-system'
 
 const homePage = (data, homeActivePage) => {
-  const page = paginationSystem(data.count, homeActivePage)
+  let page
   let dataHome = ''
   let itemCounter = 1
   if (data === 'empty') {
     dataHome = `
-      <div class="loading-animation">
-        <div class="loading-data"></div>
-          <p class="loading-text">LOADING...</p>
-        </div>
-        <div class="home-content">
-      </div>
+    <div class="loading-animation">
+    <div class="loading-data"></div>
+    <p class="loading-text">LOADING...</p>
+    </div>
+    <div class="home-content">
+    </div>
     `
   } else {
+    page = paginationSystem(data.count, homeActivePage)
     dataHome += `
       <div class="home-content">
     `

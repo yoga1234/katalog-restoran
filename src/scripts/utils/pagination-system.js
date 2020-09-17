@@ -3,10 +3,10 @@ const paginationSystem = (dataCount, activePage) => {
   const remainderPageToShow = ((dataCount % 9) > 0) ? 1 : 0
   const totalPageToShow = (pageToShow + remainderPageToShow)
   let dataReturn = ''
-  for (let i = 1; i < totalPageToShow; i++) {
+  for (let i = 1; i <= totalPageToShow; i++) {
     if (i === activePage) {
       dataReturn += `
-        <a href="#" class=" pagination-page home-active-page">${i}</a>
+        <a href="#" class=" pagination-page active-page">${i}</a>
       `
     } else {
       dataReturn += `

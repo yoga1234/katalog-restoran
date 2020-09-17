@@ -19,34 +19,21 @@ document.addEventListener('DOMContentLoaded', function () {
   hamburgerMenuInitiator({ hamburgerMenu, navigationWrapper })
 
   window.addEventListener('hashchange', async (e) => {
+    const activePage = document.querySelector('.active-page') ? document.querySelector('.active-page') : 1
+    console.log(activePage)
     if (window.location.hash !== '#maincontent') {
-      mainContent.innerHTML = urlParser.loadPage()
-
-      const dataDOM = await urlParser.renderData()
-      console.log(dataDOM)
-      mainContent.innerHTML = urlParser.loadPage(dataDOM)
+      mainContent.innerHTML = await urlParser.loadPage()
     }
   })
 
   window.addEventListener('load', async () => {
-    const homeActivePage = document.querySelector('.home-active-page') ? document.querySelector('.home-active-page') : 1
+    const activePage = document.querySelector('.active-page') ? document.querySelector('.active-page') : 1
 
     if (window.location.hash === '#maincontent') {
       window.location.hash = '#home'
       return
     }
 
-    mainContent.innerHTML = urlParser.loadPage('empty', homeActivePage)
-
-    const dataDOM = await urlParser.renderData()
-    mainContent.innerHTML = urlParser.loadPage(dataDOM, homeActivePage)
-
-    const paginationPage = document.querySelectorAll('.pagination-page')
-    for (let i = 0; i < paginationPage.length; i++) {
-      paginationPage[i].addEventListener('click', function (e) {
-        e.preventDefault()
-        console.log('you are pressing' + paginationPage[i].innerHTML)
-      })
-    }
+    mainContent.innerHTML = await urlParser.loadPage(activePage)
   })
 })
