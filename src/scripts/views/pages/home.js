@@ -1,30 +1,35 @@
 import paginationSystem from '../../utils/pagination-system'
 
-const homePage = (data, homeActivePage) => {
+const homePage = (data, pageInformation) => {
   let page
-  let dataHome = ''
-  let itemCounter = 1
-  if (data === 'empty') {
-    dataHome = `
+  let homeReturn = ''
+  let dataCounter = 1
+
+  const { activePage, pageDestination, itemInPage } = pageInformation
+  const maxDataToShow = 9
+
+  if (pageInformation === 'empty') {
+    page = paginationSystem('empty')
+    homeReturn = `
     <div class="loading-animation">
-    <div class="loading-data"></div>
-    <p class="loading-text">LOADING...</p>
-    </div>
-    <div class="home-content">
+      <div class="loading-data"></div>
+        <p class="loading-text">LOADING...</p>
+      </div>
+      <div class="home-content">
     </div>
     `
   } else {
-    page = paginationSystem(data.count, homeActivePage)
-    dataHome += `
+    page = paginationSystem(data.count, activePage)
+    homeReturn += `
       <div class="home-content">
     `
     for (const restaurant of data.restaurants) {
       if (restaurant.description.length > 150) {
         restaurant.description = restaurant.description.substring(0, 120) + '...'
       }
-      if (itemCounter <= 9) {
-        dataHome += `
-          <article class="card-article">
+      if (dataCounter <= maxDataToShow) {
+        homeReturn += `
+          <article class="card-article" data-number-item="${dataCounter}/${activePage}">
             <figure>
               <img class="article-image" src="https://dicoding-restaurant-api.el.r.appspot.com/images/small/${restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}">
             </figure>
@@ -35,12 +40,12 @@ const homePage = (data, homeActivePage) => {
               <p class="article-footer-item-2">Rating: ${restaurant.rating}/5</p>
             </div>
           </article>`
-        itemCounter++
+        dataCounter++
       } else {
         break
       }
     }
-    dataHome += `
+    homeReturn += `
       </div>
     `
   }
@@ -57,7 +62,7 @@ const homePage = (data, homeActivePage) => {
     </section>
     <section id="main-container" class="article-container">
       <h2 class="section-header">Restaurant Registered</h2>
-      ${dataHome}
+      ${homeReturn}
       <div class="pagination">
         ${page}
       </div>
