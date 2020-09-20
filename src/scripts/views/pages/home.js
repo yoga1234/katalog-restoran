@@ -3,9 +3,12 @@ import paginationSystem from '../../utils/pagination-system'
 const homePage = (data, pageInformation) => {
   let page
   let homeReturn = ''
+  let dataStart = 1
   let dataCounter = 1
+  let dataShow = 1
 
-  const { activePage, pageDestination, itemInPage } = pageInformation
+  let { activePage, pageDestination, itemInPage } = pageInformation
+  pageDestination = 2
   const maxDataToShow = 9
 
   if (pageInformation === 'empty') {
@@ -19,16 +22,24 @@ const homePage = (data, pageInformation) => {
     </div>
     `
   } else {
+    if (activePage < pageDestination) {
+      for (let i = 1; i < pageDestination; i++) {
+        dataStart = dataStart + maxDataToShow
+      }
+    }
+    console.log('data start:' + dataStart)
     page = paginationSystem(data.count, activePage)
     homeReturn += `
       <div class="home-content">
     `
     for (const restaurant of data.restaurants) {
-      if (restaurant.description.length > 150) {
-        restaurant.description = restaurant.description.substring(0, 120) + '...'
-      }
-      if (dataCounter <= maxDataToShow) {
-        homeReturn += `
+      if (dataStart <= dataCounter) {
+        if (dataShow <= maxDataToShow) {
+          console.log(dataCounter + ' ' + restaurant.name)
+          if (restaurant.description.length > 150) {
+            restaurant.description = restaurant.description.substring(0, 120) + '...'
+          }
+          homeReturn += `
           <article class="card-article" data-number-item="${dataCounter}/${activePage}">
             <figure>
               <img class="article-image" src="https://dicoding-restaurant-api.el.r.appspot.com/images/small/${restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}">
@@ -40,10 +51,10 @@ const homePage = (data, pageInformation) => {
               <p class="article-footer-item-2">Rating: ${restaurant.rating}/5</p>
             </div>
           </article>`
-        dataCounter++
-      } else {
-        break
+          dataShow++
+        }
       }
+      dataCounter++
     }
     homeReturn += `
       </div>

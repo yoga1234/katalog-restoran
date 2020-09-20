@@ -9,7 +9,7 @@ const urlParser = {
     if (pageInformation !== 'empty') {
       pageInformation = {
         activePage: pageInformation.activePage ? pageInformation.activePage : 'none',
-        pageDestination: pageInformation.pageDestination ? pageInformation.pageDestination : 'none',
+        pageDestination: pageInformation.pageDestination ? pageInformation.pageDestination : 1,
         itemInPage: pageInformation.itemInPage ? pageInformation.itemInPage : { lowestItem: 1, highestItem: 1 }
       }
     }
