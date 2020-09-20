@@ -5,15 +5,6 @@ import getListRestaurant from '../data/restaurant-data-source'
 
 const urlParser = {
   loadPage (pageInformation) {
-    console.log(pageInformation)
-    if (pageInformation !== 'empty') {
-      pageInformation = {
-        activePage: pageInformation.activePage ? pageInformation.activePage : 'none',
-        pageDestination: pageInformation.pageDestination ? pageInformation.pageDestination : 1,
-        itemInPage: pageInformation.itemInPage ? pageInformation.itemInPage : { lowestItem: 1, highestItem: 1 }
-      }
-    }
-    console.log(pageInformation)
     const url = window.location.hash.slice(1).toLowerCase()
     switch (url) {
       case '':

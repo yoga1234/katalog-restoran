@@ -7,8 +7,7 @@ const homePage = (data, pageInformation) => {
   let dataCounter = 1
   let dataShow = 1
 
-  let { activePage, pageDestination, itemInPage } = pageInformation
-  pageDestination = 2
+  const { activePage, pageDestination } = pageInformation
   const maxDataToShow = 9
 
   if (pageInformation === 'empty') {
@@ -27,7 +26,6 @@ const homePage = (data, pageInformation) => {
         dataStart = dataStart + maxDataToShow
       }
     }
-    console.log('data start:' + dataStart)
     page = paginationSystem(data.count, activePage)
     homeReturn += `
       <div class="home-content">
@@ -35,7 +33,6 @@ const homePage = (data, pageInformation) => {
     for (const restaurant of data.restaurants) {
       if (dataStart <= dataCounter) {
         if (dataShow <= maxDataToShow) {
-          console.log(dataCounter + ' ' + restaurant.name)
           if (restaurant.description.length > 150) {
             restaurant.description = restaurant.description.substring(0, 120) + '...'
           }
