@@ -21,15 +21,21 @@ const homePage = (data, pageInformation) => {
     </div>
     `
   } else {
+    console.log('active page:', activePage)
+    console.log('pageDestination', pageDestination)
     if (activePage < pageDestination) {
       for (let i = 1; i < pageDestination; i++) {
         dataStart = dataStart + maxDataToShow
       }
+    } else if (activePage > pageDestination) {
+      dataStart = (((maxDataToShow * pageDestination) - maxDataToShow) + dataStart)
     }
-    page = paginationSystem(data.count, activePage)
+    console.log('data start', dataStart)
+    page = paginationSystem(data.count, activePage, pageDestination)
     homeReturn += `
       <div class="home-content">
     `
+
     for (const restaurant of data.restaurants) {
       if (dataStart <= dataCounter) {
         if (dataShow <= maxDataToShow) {
@@ -49,6 +55,8 @@ const homePage = (data, pageInformation) => {
             </div>
           </article>`
           dataShow++
+        } else {
+          break
         }
       }
       dataCounter++
