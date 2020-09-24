@@ -4,7 +4,6 @@ const paginationListener = () => {
     pageDestination: 1
   }
   const paginationPage = document.querySelectorAll('.pagination-page')
-  console.log('this is from pagination listener component')
 
   for (let i = 0; i < paginationPage.length; i++) {
     paginationPage[i].addEventListener('click', async function (e) {

@@ -21,8 +21,6 @@ const homePage = (data, pageInformation) => {
     </div>
     `
   } else {
-    console.log('active page:', activePage)
-    console.log('pageDestination', pageDestination)
     if (activePage < pageDestination) {
       for (let i = 1; i < pageDestination; i++) {
         dataStart = dataStart + maxDataToShow
@@ -30,7 +28,6 @@ const homePage = (data, pageInformation) => {
     } else if (activePage > pageDestination) {
       dataStart = (((maxDataToShow * pageDestination) - maxDataToShow) + dataStart)
     }
-    console.log('data start', dataStart)
     page = paginationSystem(data.count, activePage, pageDestination)
     homeReturn += `
       <div class="home-content">
