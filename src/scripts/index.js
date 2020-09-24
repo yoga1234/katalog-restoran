@@ -3,9 +3,16 @@ import '../styles/main.css'
 import '../styles/responsive.css'
 
 import pageLoader from '../scripts/utils/page-loader'
-import paginationListener from '../scripts/utils/pagination-listener'
+
+const jumbotronRemover = () => {
+  const jumbotronElement = document.querySelector('.jumbotron')
+  jumbotronElement.remove()
+}
 
 window.addEventListener('DOMContentLoaded', async () => {
+  if (window.location.hash === '#favorite') {
+    jumbotronRemover()
+  }
   if (window.location.hash === '#maincontent') {
     window.location.hash = '#home'
     return
@@ -16,6 +23,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 })
 
 window.addEventListener('hashchange', async (e) => {
+  if (window.location.hash === '#favorite') {
+    jumbotronRemover()
+  }
   if (window.location.hash !== '#maincontent') {
     await pageLoader()
   }
