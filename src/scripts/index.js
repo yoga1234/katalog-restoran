@@ -6,13 +6,15 @@ import pageLoader from '../scripts/utils/page-loader'
 
 const jumbotronRemover = () => {
   const jumbotronElement = document.querySelector('.jumbotron')
-  jumbotronElement.remove()
+  if (window.location.hash === '#favorite') {
+    jumbotronElement.style.display = 'none'
+  } else {
+    jumbotronElement.style.display = 'block'
+  }
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
-  if (window.location.hash === '#favorite') {
-    jumbotronRemover()
-  }
+  jumbotronRemover()
   if (window.location.hash === '#maincontent') {
     window.location.hash = '#home'
     return
@@ -23,9 +25,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 })
 
 window.addEventListener('hashchange', async (e) => {
-  if (window.location.hash === '#favorite') {
-    jumbotronRemover()
-  }
+  jumbotronRemover()
   if (window.location.hash !== '#maincontent') {
     await pageLoader()
   }
