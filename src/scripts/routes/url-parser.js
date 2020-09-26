@@ -22,13 +22,17 @@ const urlParser = {
     }
   },
 
-  async renderData () {
+  async renderHomeData () {
     const data = await getListRestaurant()
     return data
   },
 
+  renderDetailData () {
+    // detail api fetch goes here
+  },
+
   async homePageRender (pageInformation) {
-    const homeData = await this.renderData()
+    const homeData = await this.renderHomeData()
     return homePage(homeData, pageInformation)
   },
 
