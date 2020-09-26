@@ -1,15 +1,16 @@
 import 'regenerator-runtime' /* for async await transpile */
 import '../styles/main.css'
+import '../styles/detail.css'
 import '../styles/responsive.css'
 
 import pageLoader from '../scripts/utils/page-loader'
 
 const jumbotronRemover = () => {
   const jumbotronElement = document.querySelector('.jumbotron')
-  if (window.location.hash === '#favorite') {
-    jumbotronElement.style.display = 'none'
-  } else {
+  if (window.location.hash === '#home') {
     jumbotronElement.style.display = 'block'
+  } else {
+    jumbotronElement.style.display = 'none'
   }
 }
 

@@ -1,0 +1,151 @@
+.detail-container {
+  width: 90%;
+  margin: auto;
+}
+.detail-back-left-arrow {
+  font-size: 22px;
+}
+.detail-back-button {
+  width: 20%;
+  margin: 25px 5px 5px 15px;
+  padding: 10px 20px 10px 20px;
+  border: 1px solid #457b9d;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #1d3557;
+  background-color: #f1faee;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+  transition: .3s all ease;
+}
+.detail-restaurant-name {
+  overflow: hidden;
+  margin: 40px auto 30px auto;
+  width: max-content;
+  padding: 10px 0 10px 15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  text-align: center;
+  border-top: 1px solid #1d3557;
+  border-left: 5px solid #1d3557;
+  transition: .2s ease all;
+}
+.detail-restaurant-image {
+  margin: 0 auto 10px auto;
+  border: 1px solid #000;
+  border-radius: 10px;
+  width: 90%;
+  height: 300px;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+}
+.detail-description-header,
+.detail-city-header,
+.detail-address-header,
+.detail-categories-header,
+.detail-menu-header,
+.detail-rating-header,
+.detail-reviews-header {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+.detail-description-text {
+  word-spacing: 3px;
+  margin: 10px auto 0 auto;
+  line-height: 30px;
+  font-family: 'Noto Sans JP', sans-serif;
+  text-align: justify;
+  width: 90%;
+}
+.detail-city-text,
+.detail-address-text,
+.detail-rating-text {
+  margin-top: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+  text-align: center;
+}
+.detail-categories-list {
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 30px;
+  width: 80%;
+}
+.detail-categories-list span {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+}
+.detail-menu-list {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 30px;
+}
+.detail-menu-foods,
+.detail-menu-drinks {
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  display: grid;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+}
+.detail-menu-foods span,
+.detail-menu-drinks span {
+  margin-bottom: 10px;
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.detail-reviews-list {
+  display: grid;
+}
+.detail-reviews-item {
+  margin: 10px auto 10px auto;
+  width: 90%;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px 10px 10px 30px;
+}
+.detail-reviews-item-header {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.detail-reviews-item-text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.detail-reviews-item-date {
+  display: inline-block;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
