@@ -31,8 +31,8 @@
   font-size: 40px;
   font-weight: 300;
   text-align: center;
-  border-top: 1px solid #1d3557;
-  border-left: 5px solid #1d3557;
+  border-top: 1px solid #457b9d;
+  border-left: 5px solid #457b9d;
   transition: .2s ease all;
 }
 .detail-restaurant-image {
@@ -54,18 +54,23 @@
 .detail-reviews-header {
   margin-top: 40px;
   margin-bottom: 20px;
+  padding-top: 10px;
   text-align: center;
   font-size: 35px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  border-top: 1px solid #457b9d;
+  border-left: 5px solid #457b9d;
 }
 .detail-description-text {
   word-spacing: 3px;
   margin: 10px auto 0 auto;
+  padding-left: 20px;
   line-height: 30px;
   font-family: 'Noto Sans JP', sans-serif;
   text-align: justify;
   width: 90%;
+  border-left: 1px solid #457b9d;
 }
 .detail-city-text,
 .detail-address-text,
@@ -75,6 +80,7 @@
   font-size: 25px;
   font-weight: 300;
   text-align: center;
+  border-left: 1px solid #457b9d;
 }
 .detail-categories-list {
   margin: auto;
@@ -94,6 +100,8 @@
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
   box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+  border-left: 1px solid #457b9d;
+  
 }
 .detail-menu-list {
   width: 90%;
