@@ -1,18 +1,11 @@
+import { restaurantCategories, foodsMenu, drinksMenu } from '../../utils/restaurant-detail'
+
 const detailPage = (data) => {
   console.log(data)
 
-  let restaurantCategories = ''
-  let foodsMenu = ''
-  let drinksMenu = ''
-  for (const categories of data.restaurant.categories) {
-    restaurantCategories += `<span>${categories.name}</span>`
-  }
-  for (const food of data.restaurant.menus.foods) {
-    foodsMenu += `<span>${food.name}</span>`
-  }
-  for (const drink of data.restaurant.menus.drinks) {
-    drinksMenu += `<span>${drink.name}</span>`
-  }
+  const categories = restaurantCategories(data.restaurant.categories)
+  const foods = foodsMenu(data.restaurant.menus.foods)
+  const drinks = drinksMenu(data.restaurant.menus.drinks)
 
   return `
     <section class="detail-container">
@@ -34,17 +27,17 @@ const detailPage = (data) => {
       <div class="detail-categories">
         <h3 class="detail-categories-header">Categories</h3>
         <div class="detail-categories-list">
-          ${restaurantCategories}
+          ${categories}
         </div>
       </div>
       <div class="detail-menu">
         <h3 class="detail-menu-header">Menu Available</h3>
         <div class="detail-menu-list">
           <div class="detail-menu-foods">
-            ${foodsMenu}
+            ${foods}
           </div>
           <div class="detail-menu-drinks">
-            ${drinksMenu}
+            ${drinks}
           </div>
         </div>
       </div>
@@ -53,23 +46,8 @@ const detailPage = (data) => {
         <p class="detail-rating-text">${data.restaurant.rating} From 5 points</p>
       </div>
       <div class="detail-reviews">
-        <h3 class="detail-reviews-header">Consumer Reviews Reviews</h3>
+        <h3 class="detail-reviews-header">Consumer Reviews</h3>
         <div class="detail-reviews-list">
-          <div class="detail-reviews-item">
-            <h4 class="detail-reviews-item-header">Consumer Name</h4>
-            <p class="detail-reviews-item-text">The restaurant is superb!</p>
-            <span class="detail-reviews-item-date">30 September 1995</span>
-          </div>
-          <div class="detail-reviews-item">
-            <h4 class="detail-reviews-item-header">Consumer Name</h4>
-            <p class="detail-reviews-item-text">The restaurant is superb!</p>
-            <span class="detail-reviews-item-date">30 September 1995</span>
-          </div>
-          <div class="detail-reviews-item">
-            <h4 class="detail-reviews-item-header">Consumer Name</h4>
-            <p class="detail-reviews-item-text">The restaurant is superb!</p>
-            <span class="detail-reviews-item-date">30 September 1995</span>
-          </div>
           <div class="detail-reviews-item">
             <h4 class="detail-reviews-item-header">Consumer Name</h4>
             <p class="detail-reviews-item-text">The restaurant is superb!</p>
