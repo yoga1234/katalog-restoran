@@ -21,7 +21,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     return
   }
 
-  console.log('page loader from DOMContentLoaded')
   await pageLoader()
 })
 

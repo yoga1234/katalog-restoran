@@ -1,5 +1,7 @@
 const CONFIG = {
-  HOME_URL: 'https://dicoding-restaurant-api.el.r.appspot.com/list'
+  BASE_URL: 'https://dicoding-restaurant-api.el.r.appspot.com',
+  HOME_URL: '/list',
+  DETAIL_URL: '/detail/'
 }
 
 export default CONFIG

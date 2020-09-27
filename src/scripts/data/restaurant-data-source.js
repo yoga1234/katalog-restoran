@@ -1,9 +1,15 @@
 import CONFIG from '../globals/config'
 
 const getListRestaurant = async () => {
-  const response = await fetch(CONFIG.HOME_URL)
+  const response = await fetch(CONFIG.BASE_URL + CONFIG.HOME_URL)
   const responseJson = await response.json()
   return responseJson
 }
 
-export default getListRestaurant
+const getDetailRestaurant = async (id) => {
+  const response = await fetch(CONFIG.BASE_URL + CONFIG.DETAIL_URL + id)
+  const responseJson = await response.json()
+  return responseJson
+}
+
+export { getListRestaurant, getDetailRestaurant }

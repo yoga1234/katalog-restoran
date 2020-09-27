@@ -297,6 +297,10 @@ figcaption {
     font-size: 22px;
     transition: .25s ease all;
 }
+.restaurant-detail {
+    text-decoration: none;
+    color: #000;
+}
 .article-title:focus {
     outline: none;
     border-right: 5px solid rgba(0, 128, 0, 0.5);

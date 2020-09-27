@@ -2,11 +2,12 @@ import homePage from '../views/pages/home'
 import favoritePage from '../views/pages/favorite'
 import detailPage from '../views/pages/detail'
 
-import getListRestaurant from '../data/restaurant-data-source'
+import { getListRestaurant, getDetailRestaurant } from '../data/restaurant-data-source'
 
 const urlParser = {
   loadPage (pageInformation) {
-    const url = window.location.hash.slice(1).toLowerCase()
+    const url = window.location.href.split('/')[3].slice(1).toLowerCase()
+    const idDetail = window.location.href.split('/')[4]
     switch (url) {
       case '':
         window.location.hash = 'home'
@@ -16,9 +17,9 @@ const urlParser = {
       case 'favorite':
         return this.favoritePageRender()
       case 'detail':
-        return this.detailPageRender()
+        return this.detailPageRender(idDetail)
       default:
-        return this.homePage()
+        return this.homePageRender()
     }
   },
 
@@ -27,8 +28,9 @@ const urlParser = {
     return data
   },
 
-  renderDetailData () {
-    // detail api fetch goes here
+  async renderDetailData (id) {
+    const data = await getDetailRestaurant(id)
+    return data
   },
 
   async homePageRender (pageInformation) {
@@ -40,7 +42,9 @@ const urlParser = {
     return favoritePage()
   },
 
-  detailPageRender () {
+  async detailPageRender (id) {
+    const restaurantDetail = await this.renderDetailData(id)
+    console.log(restaurantDetail)
     return detailPage()
   }
 }

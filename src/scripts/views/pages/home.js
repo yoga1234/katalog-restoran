@@ -7,6 +7,8 @@ const homePage = (data, pageInformation) => {
   let dataCounter = 1
   let dataShow = 1
 
+  pageInformation = pageInformation || { activePage: 1, pageDestination: 1 }
+
   const { activePage, pageDestination } = pageInformation
   const maxDataToShow = 9
 
@@ -44,7 +46,7 @@ const homePage = (data, pageInformation) => {
             <figure>
               <img class="article-image" src="https://dicoding-restaurant-api.el.r.appspot.com/images/small/${restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}">
             </figure>
-            <h3 class="article-title">${restaurant.name}</h3>
+            <h3 class="article-title"><a href="#detail/${restaurant.id}" class="restaurant-detail">${restaurant.name}</a></h3>
             <p class="article-desc">${restaurant.description}</p>
             <div class="article-footer">
               <p class="article-footer-item-1">${restaurant.city}</p>
