@@ -1,4 +1,5 @@
-const detailPage = () => {
+const detailPage = (data) => {
+  console.log(data)
   return `
     <section class="detail-container">
       <button class="detail-back-button"> <span class="detail-back-left-arrow">&lt;</span> Back</button>
