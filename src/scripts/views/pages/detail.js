@@ -1,5 +1,5 @@
 const detailPage = (data) => {
-  console.log(data)
+  console.log('this is from detail')
   return `
     <section class="detail-container">
       <button class="detail-back-button"> <span class="detail-back-left-arrow">&lt;</span> Back</button>

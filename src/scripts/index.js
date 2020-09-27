@@ -15,6 +15,7 @@ const jumbotronRemover = () => {
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
+  console.log('this is from DOMContentLoader')
   jumbotronRemover()
   if (window.location.hash === '#maincontent') {
     window.location.hash = '#home'
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 })
 
 window.addEventListener('hashchange', async (e) => {
+  console.log('this is from hashchange')
   jumbotronRemover()
   if (window.location.hash !== '#maincontent') {
     await pageLoader()
