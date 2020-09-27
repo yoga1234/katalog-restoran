@@ -1,4 +1,5 @@
 import { restaurantCategories, foodsMenu, drinksMenu } from '../../utils/restaurant-detail'
+import CONFIG from '../../globals/config'
 
 const detailPage = (data) => {
   console.log(data)
@@ -9,9 +10,9 @@ const detailPage = (data) => {
 
   return `
     <section class="detail-container">
-      <button class="detail-back-button"> <span class="detail-back-left-arrow">&lt;</span> Back</button>
+      <a class="detail-back-button" href="#">Back</a>
       <h2 class="detail-restaurant-name">${data.restaurant.name}</h2>
-      <div class="detail-restaurant-image"></div>
+      <div class="detail-restaurant-image" style="background-image: url(${CONFIG.IMAGE_lARGE + data.restaurant.pictureId})"></div>
       <div class="detail-description">
         <h3 class="detail-description-header">Description</h3>
         <p class="detail-description-text">${data.restaurant.description}</p>
@@ -34,9 +35,11 @@ const detailPage = (data) => {
         <h3 class="detail-menu-header">Menu Available</h3>
         <div class="detail-menu-list">
           <div class="detail-menu-foods">
+            <h3 class="detail-foods-header">Foods</h3>
             ${foods}
           </div>
           <div class="detail-menu-drinks">
+            <h3 class="detail-drinks-header">Drinks</h3>
             ${drinks}
           </div>
         </div>
