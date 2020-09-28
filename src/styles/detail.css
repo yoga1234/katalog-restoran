@@ -1,3 +1,13 @@
+.detail-not-found {
+  text-transform: uppercase;
+  font-size: 38px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 300px;
+
+}
 .detail-container {
   width: 90%;
   margin: auto;
@@ -12,7 +22,7 @@
   padding: 10px 30px 10px 30px;
   border: 1px solid #457b9d;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
   text-transform: uppercase;
@@ -42,6 +52,9 @@
   transition: .2s ease all;
 }
 .detail-restaurant-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   margin: 0 auto 10px auto;
   border-radius: 10px;
   width: 90%;
@@ -142,8 +155,34 @@
   border-radius: 5px;
   font-family: 'Noto Sans JP', sans-serif;
 }
+.detail-rating-and-reviews {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 .detail-reviews-list {
   display: grid;
+}
+.detail-add-review {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+  margin: 0 auto;
+  border: 2px solid #457b9d;
+  background-color: #457b9d;
+  border-radius: 5px;
+  font-size: 22px;
+  color: #f1faee;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+  transition: .25s all ease;
+}
+.detail-add-review:hover {
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
 }
 .detail-reviews-item {
   margin: 10px auto 10px auto;

@@ -1,12 +1,16 @@
-import { restaurantCategories, foodsMenu, drinksMenu } from '../../utils/restaurant-detail'
+import { restaurantCategories, foodsMenu, drinksMenu, consumerReviews } from '../../utils/restaurant-detail'
 import CONFIG from '../../globals/config'
 
 const detailPage = (data) => {
+  if (data.error === true) {
+    return `<h2 class="detail-not-found">Oops, data is ${data.message}.</h2>`
+  }
   console.log(data)
 
   const categories = restaurantCategories(data.restaurant.categories)
   const foods = foodsMenu(data.restaurant.menus.foods)
   const drinks = drinksMenu(data.restaurant.menus.drinks)
+  const reviews = consumerReviews(data.restaurant.consumerReviews)
 
   return `
     <section class="detail-container">
@@ -44,17 +48,16 @@ const detailPage = (data) => {
           </div>
         </div>
       </div>
-      <div class="detal-rating">
-        <h3 class="detail-rating-header">Rating</h3>
-        <p class="detail-rating-text">${data.restaurant.rating} From 5 points</p>
-      </div>
-      <div class="detail-reviews">
-        <h3 class="detail-reviews-header">Consumer Reviews</h3>
-        <div class="detail-reviews-list">
-          <div class="detail-reviews-item">
-            <h4 class="detail-reviews-item-header">Consumer Name</h4>
-            <p class="detail-reviews-item-text">The restaurant is superb!</p>
-            <span class="detail-reviews-item-date">30 September 1995</span>
+      <div class="detail-rating-and-reviews">
+        <div class="detal-rating">
+          <h3 class="detail-rating-header">Rating</h3>
+          <p class="detail-rating-text">${data.restaurant.rating} From 5 points</p>
+        </div>
+        <div class="detail-reviews">
+          <h3 class="detail-reviews-header">Consumer Reviews</h3>
+          <div class="detail-reviews-list">
+          <button class="detail-add-review">Add Review</button>
+            ${reviews}
           </div>
         </div>
       </div>
