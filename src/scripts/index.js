@@ -15,7 +15,6 @@ const jumbotronRemover = () => {
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
-  console.log('this is from DOMContentLoader')
   jumbotronRemover()
   if (window.location.hash === '#maincontent') {
     window.location.hash = '#home'
@@ -23,10 +22,15 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
 
   await pageLoader()
+
+  const formSubmit = document.getElementById('detail-review-form-submit')
+  formSubmit.addEventListener('submit', (e) => {
+    e.preventDefault()
+    console.log('submit has been clicked')
+  })
 })
 
 window.addEventListener('hashchange', async (e) => {
-  console.log('this is from hashchange')
   jumbotronRemover()
   if (window.location.hash !== '#maincontent') {
     await pageLoader()

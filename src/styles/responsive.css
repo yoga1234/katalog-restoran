@@ -119,6 +119,9 @@
   .proven-quality-article {
     width: 100%;
   }
+  .detail-container {
+    width: 80%;
+  }
   .detail-restaurant-image {
     width: 85%;
   }

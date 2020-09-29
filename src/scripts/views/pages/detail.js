@@ -56,7 +56,14 @@ const detailPage = (data) => {
         <div class="detail-reviews">
           <h3 class="detail-reviews-header">Consumer Reviews</h3>
           <div class="detail-reviews-list">
-          <button class="detail-add-review">Add Review</button>
+          <form id="detail-review-form-submit" class="detail-add-review-form">
+            <label for="reviewname" class="detail-label-name">Your name:</label>
+            <input type="text" id="reviewname" class="detail-input-name" placeholder="enter your name here" autocomplete="off">
+            <br>
+            <label for="reviewdescription" class="detail-label-description">Review:</label>
+            <input type="text" id="reviewdescription" class="detail-input-description" placeholder="enter your review"autocomplete="off">
+            <button class="detail-add-review" type="submit">Add Review</button>
+          </form>
             ${reviews}
           </div>
         </div>
