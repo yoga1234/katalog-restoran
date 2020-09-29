@@ -14,7 +14,7 @@ const detailPage = (data) => {
 
   return `
     <section class="detail-container">
-      <a class="detail-back-button" href="#">Back</a>
+      <a class="detail-back-button" href="#home">Back</a>
       <h2 class="detail-restaurant-name">${data.restaurant.name}</h2>
       <div class="detail-restaurant-image" style="background-image: url(${CONFIG.IMAGE_lARGE + data.restaurant.pictureId})"></div>
       <div class="detail-description">

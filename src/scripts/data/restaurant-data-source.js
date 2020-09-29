@@ -12,4 +12,20 @@ const getDetailRestaurant = async (id) => {
   return responseJson
 }
 
-export { getListRestaurant, getDetailRestaurant }
+const addNewReview = async (data) => {
+  const sendRequest = await fetch(CONFIG.BASE_URL + CONFIG.ADD_REVIEW_URL, {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Auth-Token': '12345'
+    },
+    body: JSON.stringify({
+      id: data.id,
+      name: data.name,
+      review: data.review
+    })
+  })
+  return sendRequest
+}
+
+export { getListRestaurant, getDetailRestaurant, addNewReview }

@@ -4,15 +4,8 @@ import '../styles/detail.css'
 import '../styles/responsive.css'
 
 import pageLoader from '../scripts/utils/page-loader'
-
-const jumbotronRemover = () => {
-  const jumbotronElement = document.querySelector('.jumbotron')
-  if (window.location.hash === '#home') {
-    jumbotronElement.style.display = 'block'
-  } else {
-    jumbotronElement.style.display = 'none'
-  }
-}
+import detailAddReviewEvent from '../scripts/utils/detail-add-review-event'
+import jumbotronRemover from '../scripts/utils/jumbotron-remover'
 
 window.addEventListener('DOMContentLoaded', async () => {
   jumbotronRemover()
@@ -23,11 +16,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   await pageLoader()
 
-  const formSubmit = document.getElementById('detail-review-form-submit')
-  formSubmit.addEventListener('submit', (e) => {
-    e.preventDefault()
-    console.log('submit has been clicked')
-  })
+  detailAddReviewEvent()
 })
 
 window.addEventListener('hashchange', async (e) => {
@@ -35,4 +24,5 @@ window.addEventListener('hashchange', async (e) => {
   if (window.location.hash !== '#maincontent') {
     await pageLoader()
   }
+  detailAddReviewEvent()
 })

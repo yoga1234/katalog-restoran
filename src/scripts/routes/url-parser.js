@@ -2,7 +2,7 @@ import homePage from '../views/pages/home'
 import favoritePage from '../views/pages/favorite'
 import detailPage from '../views/pages/detail'
 
-import { getListRestaurant, getDetailRestaurant } from '../data/restaurant-data-source'
+import { getListRestaurant, getDetailRestaurant, addNewReview } from '../data/restaurant-data-source'
 
 const urlParser = {
   loadPage (pageInformation) {
@@ -26,6 +26,15 @@ const urlParser = {
   async renderHomeData () {
     const data = await getListRestaurant()
     return data
+  },
+
+  async insertReviewData (data) {
+    data = {
+      id: window.location.href.split('/')[4],
+      ...data
+    }
+    const insertData = await addNewReview(data)
+    console.log(insertData)
   },
 
   async renderDetailData (id) {
