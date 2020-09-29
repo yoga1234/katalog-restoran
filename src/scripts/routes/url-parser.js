@@ -34,7 +34,7 @@ const urlParser = {
       ...data
     }
     const insertData = await addNewReview(data)
-    console.log(insertData)
+    return insertData
   },
 
   async renderDetailData (id) {
