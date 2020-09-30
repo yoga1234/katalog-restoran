@@ -1,7 +1,6 @@
 import urlParser from '../routes/url-parser'
 
 import skipToContent from './skip-to-content-event'
-import hamburgerMenuInitiator from './hamburger-menu-initiator'
 
 const paginationListener = () => {
   const pageInformation = {
@@ -22,16 +21,12 @@ const paginationListener = () => {
 
 const pageLoader = async (pageInformation) => {
   const mainContent = document.getElementById('maincontent')
-  const navigationWrapper = document.getElementById('navigation-wrapper')
-  const hamburgerMenu = document.querySelector('.hamburger-menu')
   const skipToContentElement = document.querySelector('.skip-to-content')
   const sectionHeader = document.querySelector('.section-header')
 
   pageInformation = pageInformation || { activePage: 1, pageDestination: 1 }
 
   skipToContent({ skipToContentElement, sectionHeader })
-
-  hamburgerMenuInitiator({ hamburgerMenu, navigationWrapper })
 
   mainContent.innerHTML = await urlParser.loadPage('empty')
   mainContent.innerHTML = await urlParser.loadPage(pageInformation)

@@ -7,8 +7,10 @@ import pageLoader from '../scripts/utils/page-loader'
 import detailAddReviewEvent from '../scripts/utils/detail-add-review-event'
 import jumbotronRemover from '../scripts/utils/jumbotron-remover'
 import { backToTopBehaviour } from '../scripts/utils/scroll-top'
+import hamburgerMenuInitiator from '../scripts/utils/hamburger-menu-initiator'
 
 window.addEventListener('DOMContentLoaded', async () => {
+  hamburgerMenuInitiator()
   jumbotronRemover()
   if (window.location.hash === '#maincontent') {
     window.location.hash = '#home'
