@@ -21,12 +21,11 @@ const paginationListener = () => {
 
 const pageLoader = async (pageInformation) => {
   const mainContent = document.getElementById('maincontent')
-  const skipToContentElement = document.querySelector('.skip-to-content')
-  const sectionHeader = document.querySelector('.section-header')
+  
 
   pageInformation = pageInformation || { activePage: 1, pageDestination: 1 }
 
-  skipToContent({ skipToContentElement, sectionHeader })
+  skipToContent()
 
   mainContent.innerHTML = await urlParser.loadPage('empty')
   mainContent.innerHTML = await urlParser.loadPage(pageInformation)
