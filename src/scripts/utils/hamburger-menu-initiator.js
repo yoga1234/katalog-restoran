@@ -1,11 +1,9 @@
 const hamburgerMenuInitiator = () => {
   const navigationWrapper = document.getElementById('navigation-wrapper')
   const hamburgerMenu = document.querySelector('.hamburger-menu')
-  const navigationLink = document.querySelectorAll('.link-item-href')
 
   hamburgerMenu.addEventListener('click', () => {
     navigationWrapper.classList.toggle('open')
-    console.log('this is from hamburger menu')
   })
 
   document.addEventListener('click', (e) => {
@@ -14,13 +12,10 @@ const hamburgerMenuInitiator = () => {
         navigationWrapper.classList.remove('open')
       }
     }
+    if (e.target.classList.contains('link-item-href')) {
+      e.target.blur()
+    }
   })
-
-  // for (let i = 0; i < navigationLink.length; i++) {
-  //   navigationLink[i].addEventListener('click', () => {
-  //     navigationWrapper.classList.toggle('open')
-  //   })
-  // }
 }
 
 export default hamburgerMenuInitiator
