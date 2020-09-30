@@ -13,6 +13,8 @@ const backToTopBehaviour = () => {
       backToTopButton.style.display = 'none'
     }
   }
+
+  backToTopButton.addEventListener('click', backToTop)
 }
 
 export { backToTop, backToTopBehaviour }
