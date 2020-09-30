@@ -68,6 +68,9 @@ const detailPage = (data) => {
           </div>
         </div>
       </div>
+      <div class="add-to-favorite">
+        <p class="add-to-favorite-text">Add To Favorite</p>
+      </div>
       <div class="back-to-top">
         <p class="back-to-top-text">Go Top</p>
       </div>
