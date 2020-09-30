@@ -6,6 +6,7 @@ import '../styles/responsive.css'
 import pageLoader from '../scripts/utils/page-loader'
 import detailAddReviewEvent from '../scripts/utils/detail-add-review-event'
 import jumbotronRemover from '../scripts/utils/jumbotron-remover'
+import { backToTopBehaviour } from '../scripts/utils/scroll-top'
 
 window.addEventListener('DOMContentLoaded', async () => {
   jumbotronRemover()
@@ -17,6 +18,9 @@ window.addEventListener('DOMContentLoaded', async () => {
   await pageLoader()
 
   detailAddReviewEvent()
+  if (window.location.hash !== '#home' && window.location.hash !== '#favorite') {
+    backToTopBehaviour()
+  }
 })
 
 window.addEventListener('hashchange', async (e) => {
@@ -25,4 +29,7 @@ window.addEventListener('hashchange', async (e) => {
     await pageLoader()
   }
   detailAddReviewEvent()
+  if (window.location.hash !== '#home' && window.location.hash !== '#favorite') {
+    backToTopBehaviour()
+  }
 })

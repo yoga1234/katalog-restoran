@@ -68,8 +68,10 @@ const detailPage = (data) => {
           </div>
         </div>
       </div>
-    </section>
-  `
+      <div class="back-to-top">
+        <p class="back-to-top-text">Go Top</p>
+      </div>
+    </section>`
 }
 
 export default detailPage

@@ -2,6 +2,8 @@ import homePage from '../views/pages/home'
 import favoritePage from '../views/pages/favorite'
 import detailPage from '../views/pages/detail'
 
+import { backToTop } from '../utils/scroll-top'
+
 import { getListRestaurant, getDetailRestaurant, addNewReview } from '../data/restaurant-data-source'
 
 const urlParser = {
@@ -17,6 +19,7 @@ const urlParser = {
       case 'favorite':
         return this.favoritePageRender()
       case 'detail':
+        backToTop()
         return this.detailPageRender(idDetail)
       default:
         return this.homePageRender()
@@ -53,7 +56,6 @@ const urlParser = {
 
   async detailPageRender (id) {
     const restaurantDetail = await this.renderDetailData(id)
-    console.log('this is from url parser')
     return detailPage(restaurantDetail)
   }
 }
