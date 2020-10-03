@@ -4,6 +4,7 @@ const CONFIG = {
   HOME_URL: '/list',
   DETAIL_URL: '/detail/',
   ADD_REVIEW_URL: '/review',
+  IMAGE_SMALL: 'https://dicoding-restaurant-api.el.r.appspot.com/images/small/',
   IMAGE_lARGE: 'https://dicoding-restaurant-api.el.r.appspot.com/images/large/',
   DB_NAME: 'foodstyle-database',
   DB_VERSION: 1,

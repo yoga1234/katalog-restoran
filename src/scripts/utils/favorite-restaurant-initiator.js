@@ -26,4 +26,8 @@ const checkFavorite = async () => {
   return addToFavoriteButton
 }
 
-export { addToFavorite, checkFavorite }
+const getAllRestaurantData = () => {
+  console.log('this is get all restaurant function')
+}
+
+export { addToFavorite, checkFavorite, getAllRestaurantData }

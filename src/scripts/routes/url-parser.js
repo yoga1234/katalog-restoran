@@ -5,6 +5,7 @@ import detailPage from '../views/pages/detail'
 import { backToTop } from '../utils/scroll-top'
 
 import { getListRestaurant, getDetailRestaurant, addNewReview } from '../data/restaurant-data-source'
+import favoriteRestaurantDB from '../data/favorite-restaurant'
 
 const urlParser = {
   loadPage (pageInformation) {
@@ -50,8 +51,9 @@ const urlParser = {
     return homePage(homeData, pageInformation)
   },
 
-  favoritePageRender () {
-    return favoritePage()
+  async favoritePageRender () {
+    const favoriteData = await favoriteRestaurantDB.getAllRestaurant()
+    return favoritePage(favoriteData)
   }
 
 }

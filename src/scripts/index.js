@@ -8,7 +8,7 @@ import detailAddReviewEvent from '../scripts/utils/detail-add-review-event'
 import jumbotronRemover from '../scripts/utils/jumbotron-remover'
 import { backToTopBehaviour } from '../scripts/utils/scroll-top'
 import hamburgerMenuInitiator from '../scripts/utils/hamburger-menu-initiator'
-import { addToFavorite, checkFavorite } from '../scripts/utils/favorite-restaurant-initiator'
+import { addToFavorite } from '../scripts/utils/favorite-restaurant-initiator'
 
 window.addEventListener('DOMContentLoaded', async () => {
   hamburgerMenuInitiator()
@@ -24,7 +24,6 @@ window.addEventListener('DOMContentLoaded', async () => {
   if (window.location.hash !== '#home' && window.location.hash !== '#favorite') {
     backToTopBehaviour()
     addToFavorite()
-    checkFavorite()
   }
 })
 
@@ -37,6 +36,5 @@ window.addEventListener('hashchange', async (e) => {
   if (window.location.hash !== '#home' && window.location.hash !== '#favorite') {
     backToTopBehaviour()
     addToFavorite()
-    checkFavorite()
   }
 })

@@ -1,3 +1,4 @@
+import CONFIG from '../../globals/config'
 import paginationSystem from '../../utils/pagination-system'
 
 const homePage = (data, pageInformation) => {
@@ -44,7 +45,7 @@ const homePage = (data, pageInformation) => {
           homeReturn += `
           <article class="card-article" data-number-item="${dataCounter}/${activePage}">
             <figure>
-              <img class="article-image" src="https://dicoding-restaurant-api.el.r.appspot.com/images/small/${restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}">
+              <img class="article-image" src="${CONFIG.IMAGE_SMALL}${restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}">
             </figure>
             <h3 class="article-title"><a href="#detail/${restaurant.id}" class="restaurant-detail">${restaurant.name}</a></h3>
             <p class="article-desc">${restaurant.description}</p>
