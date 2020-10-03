@@ -1,5 +1,6 @@
 import CONFIG from '../../globals/config'
 import paginationSystem from '../../utils/pagination-system'
+import descriptionShorter from '../../utils/description-shorter'
 
 const homePage = (data, pageInformation) => {
   let page
@@ -39,9 +40,7 @@ const homePage = (data, pageInformation) => {
     for (const restaurant of data.restaurants) {
       if (dataStart <= dataCounter) {
         if (dataShow <= maxDataToShow) {
-          if (restaurant.description.length > 150) {
-            restaurant.description = restaurant.description.substring(0, 120) + '...'
-          }
+          restaurant.description = descriptionShorter(restaurant.description)
           homeReturn += `
           <article class="card-article" data-number-item="${dataCounter}/${activePage}">
             <figure>
