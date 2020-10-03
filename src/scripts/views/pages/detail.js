@@ -1,10 +1,13 @@
 import { restaurantCategories, foodsMenu, drinksMenu, consumerReviews } from '../../utils/restaurant-detail'
+import { checkFavorite } from '../../utils/favorite-restaurant-initiator'
 import CONFIG from '../../globals/config'
 
-const detailPage = (data) => {
+const detailPage = async (data) => {
   if (data.error === true) {
     return `<h2 class="detail-not-found">Oops, data is ${data.message}.</h2>`
   }
+
+  const checkFavoriteData = await checkFavorite(data.restaurant.id)
 
   const categories = restaurantCategories(data.restaurant.categories)
   const foods = foodsMenu(data.restaurant.menus.foods)
@@ -68,7 +71,7 @@ const detailPage = (data) => {
         </div>
       </div>
       <div class="add-to-favorite">
-        <button id="add-to-favorite" class="add-to-favorite-text">Add To Favorite</button>
+        ${checkFavoriteData}
       </div>
       <div class="back-to-top">
         <button class="back-to-top-text">Go Top</button>

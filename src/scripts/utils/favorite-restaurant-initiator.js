@@ -12,4 +12,18 @@ const addToFavorite = () => {
   })
 }
 
-export default addToFavorite
+const checkFavorite = async () => {
+  const idDetail = window.location.href.split('/')[4]
+  let addToFavoriteButton = ''
+
+  const dataRestaurant = await favoriteRestaurantDB.getRestaurant(idDetail)
+  if (dataRestaurant === undefined) {
+    addToFavoriteButton = '<button id="add-to-favorite" class="add-to-favorite-text">Add To Favorite</button>'
+  } else {
+    addToFavoriteButton = '<button id="add-to-favorite" class="is-on-favorite">Restaurant is on favorite</button>'
+  }
+
+  return addToFavoriteButton
+}
+
+export { addToFavorite, checkFavorite }
