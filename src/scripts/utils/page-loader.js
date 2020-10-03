@@ -21,7 +21,6 @@ const paginationListener = () => {
 
 const pageLoader = async (pageInformation) => {
   const mainContent = document.getElementById('maincontent')
-  
 
   pageInformation = pageInformation || { activePage: 1, pageDestination: 1 }
 

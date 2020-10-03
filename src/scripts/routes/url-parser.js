@@ -20,7 +20,7 @@ const urlParser = {
         return this.favoritePageRender()
       case 'detail':
         backToTop()
-        return this.detailPageRender(idDetail)
+        return this.renderDetailData(idDetail)
       default:
         return this.homePageRender()
     }
@@ -42,7 +42,7 @@ const urlParser = {
 
   async renderDetailData (id) {
     const data = await getDetailRestaurant(id)
-    return data
+    return detailPage(data)
   },
 
   async homePageRender (pageInformation) {
@@ -52,12 +52,8 @@ const urlParser = {
 
   favoritePageRender () {
     return favoritePage()
-  },
-
-  async detailPageRender (id) {
-    const restaurantDetail = await this.renderDetailData(id)
-    return detailPage(restaurantDetail)
   }
+
 }
 
 export default urlParser

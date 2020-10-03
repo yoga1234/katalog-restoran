@@ -17,7 +17,7 @@ const addNewReview = async (data) => {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
-      'X-Auth-Token': '12345'
+      'X-Auth-Token': CONFIG.API_KEY
     },
     body: JSON.stringify({
       id: data.id,

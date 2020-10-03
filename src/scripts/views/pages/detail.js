@@ -5,7 +5,6 @@ const detailPage = (data) => {
   if (data.error === true) {
     return `<h2 class="detail-not-found">Oops, data is ${data.message}.</h2>`
   }
-  console.log(data)
 
   const categories = restaurantCategories(data.restaurant.categories)
   const foods = foodsMenu(data.restaurant.menus.foods)
@@ -69,10 +68,10 @@ const detailPage = (data) => {
         </div>
       </div>
       <div class="add-to-favorite">
-        <p class="add-to-favorite-text">Add To Favorite</p>
+        <button id="add-to-favorite" class="add-to-favorite-text">Add To Favorite</button>
       </div>
       <div class="back-to-top">
-        <p class="back-to-top-text">Go Top</p>
+        <button class="back-to-top-text">Go Top</button>
       </div>
     </section>`
 }

@@ -1,5 +1,4 @@
 const restaurantCategories = (data) => {
-  console.log(data)
   let categories = ''
   for (const categorie of data) {
     categories += `<span>${categorie.name}</span>`
