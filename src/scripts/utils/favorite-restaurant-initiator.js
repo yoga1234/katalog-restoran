@@ -10,7 +10,7 @@ const changeFavoriteText = async (button, id) => {
   } else {
     button.classList.remove('add-to-favorite-text')
     button.classList.add('is-on-favorite')
-    button.innerHTML = 'Restaurant is on favorite'
+    button.innerHTML = 'Remove from favorite'
   }
 }
 
@@ -19,11 +19,20 @@ const addToFavorite = () => {
   const idDetail = window.location.href.split('/')[4]
 
   favoriteRestaurantButton.addEventListener('click', async () => {
-    const data = await getDetailRestaurant(idDetail)
-    favoriteRestaurantDB.putRestaurant(data.restaurant)
-    changeFavoriteText(favoriteRestaurantButton, idDetail)
+    // cek apakah textnya add atau remove
+    if (favoriteRestaurantButton.innerHTML.toLowerCase() === 'add to favorite') {
+      const data = await getDetailRestaurant(idDetail)
+      favoriteRestaurantDB.putRestaurant(data.restaurant)
+      alert('Success adding restaurant to favorite')
+      changeFavoriteText(favoriteRestaurantButton, idDetail)
+    } else if (favoriteRestaurantButton.innerHTML.toLowerCase() === 'remove from favorite') {
+      favoriteRestaurantDB.deleteRestaurant(idDetail)
+      alert('Restaurant has been removed from favorite')
+      changeFavoriteText(favoriteRestaurantButton, idDetail)
+    }
   })
 }
+
 
 const checkFavorite = async () => {
   const idDetail = window.location.href.split('/')[4]
@@ -33,7 +42,7 @@ const checkFavorite = async () => {
   if (dataRestaurant === undefined) {
     addToFavoriteButton = '<button id="add-to-favorite" class="add-to-favorite-text">Add To Favorite</button>'
   } else {
-    addToFavoriteButton = '<button id="add-to-favorite" class="is-on-favorite">Restaurant is on favorite</button>'
+    addToFavoriteButton = '<button id="add-to-favorite" class="is-on-favorite">Remove from favorite</button>'
   }
 
   return addToFavoriteButton
