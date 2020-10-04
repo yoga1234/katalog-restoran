@@ -1,6 +1,19 @@
 import { getDetailRestaurant } from '../data/restaurant-data-source'
 import favoriteRestaurantDB from '../data/favorite-restaurant'
 
+const changeFavoriteText = async (button, id) => {
+  const dataRestaurant = await favoriteRestaurantDB.getRestaurant(id)
+  if (dataRestaurant === undefined) {
+    button.classList.add('add-to-favorite-text')
+    button.classList.remove('is-on-favorite')
+    button.innerHTML = 'Add To Favorite'
+  } else {
+    button.classList.remove('add-to-favorite-text')
+    button.classList.add('is-on-favorite')
+    button.innerHTML = 'Restaurant is on favorite'
+  }
+}
+
 const addToFavorite = () => {
   const favoriteRestaurantButton = document.getElementById('add-to-favorite')
   const idDetail = window.location.href.split('/')[4]
@@ -9,6 +22,7 @@ const addToFavorite = () => {
     const data = await getDetailRestaurant(idDetail)
     favoriteRestaurantDB.putRestaurant(data.restaurant)
     console.log('anda click add to favorite button')
+    changeFavoriteText(favoriteRestaurantButton, idDetail)
   })
 }
 

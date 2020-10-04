@@ -1,14 +1,16 @@
 import CONFIG from '../../globals/config'
+import descriptionShorter from '../../utils/description-shorter'
 
 const favoritePage = (data) => {
   let favoriteReturn = ''
   data.forEach(restaurant => {
+    restaurant.description = descriptionShorter(restaurant.description)
     favoriteReturn += `
     <article class="card-article">
       <figure>
         <img class="article-image" src="${CONFIG.IMAGE_SMALL}${restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}">
       </figure>
-      <h3 class="article-title">${restaurant.name}</h3>
+      <h3 class="article-title"><a href="#detail/${restaurant.id}" class="restaurant-detail">${restaurant.name}</a></h3>
       <p class="article-desc">${restaurant.description}</p>
       <div class="article-footer">
         <p class="article-footer-item-1">${restaurant.city}</p>
