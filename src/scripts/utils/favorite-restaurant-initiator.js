@@ -21,7 +21,6 @@ const addToFavorite = () => {
   favoriteRestaurantButton.addEventListener('click', async () => {
     const data = await getDetailRestaurant(idDetail)
     favoriteRestaurantDB.putRestaurant(data.restaurant)
-    console.log('anda click add to favorite button')
     changeFavoriteText(favoriteRestaurantButton, idDetail)
   })
 }

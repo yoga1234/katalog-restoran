@@ -3,6 +3,11 @@ import descriptionShorter from '../../utils/description-shorter'
 
 const favoritePage = (data) => {
   let favoriteReturn = ''
+
+  if (data.length === 0) {
+    favoriteReturn = '<h3 class="no-favorite-restaurant">No favorite restaurant saved.</h3>'
+  }
+
   data.forEach(restaurant => {
     restaurant.description = descriptionShorter(restaurant.description)
     favoriteReturn += `

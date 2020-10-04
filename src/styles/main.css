@@ -513,3 +513,11 @@ footer {
     font-weight: 300;
     color: #f1faee;
 }
+.no-favorite-restaurant {
+    grid-column-end: 3;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    margin: 50px auto 300px auto;
+}
