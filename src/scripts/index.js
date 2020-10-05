@@ -9,6 +9,7 @@ import jumbotronRemover from '../scripts/utils/jumbotron-remover'
 import { backToTopBehaviour } from '../scripts/utils/scroll-top'
 import hamburgerMenuInitiator from '../scripts/utils/hamburger-menu-initiator'
 import { addToFavorite } from '../scripts/utils/favorite-restaurant-initiator'
+import swRegister from './utils/sw-register'
 
 window.addEventListener('DOMContentLoaded', async () => {
   hamburgerMenuInitiator()
@@ -37,4 +38,8 @@ window.addEventListener('hashchange', async (e) => {
     backToTopBehaviour()
     addToFavorite()
   }
+})
+
+window.addEventListener('load', () => {
+  swRegister()
 })

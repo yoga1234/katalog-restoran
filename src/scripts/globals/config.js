@@ -8,7 +8,8 @@ const CONFIG = {
   IMAGE_lARGE: 'https://dicoding-restaurant-api.el.r.appspot.com/images/large/',
   DB_NAME: 'foodstyle-database',
   DB_VERSION: 1,
-  OBJECT_STORE_NAME: 'movies'
+  OBJECT_STORE_NAME: 'restaurants',
+  CACHE_NAME: 'Foodstyle-V1'
 }
 
 export default CONFIG
