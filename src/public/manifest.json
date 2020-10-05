@@ -2,7 +2,7 @@
   "name": "Foodstyle Website",
   "short_name": "Foodstyle",
   "description": "A Restaurant food review website by Yogasmara",
-  "start_url": "/index.html",
+  "start_url": "/index.html/",
   "display": "standalone",
   "background_color": "#a8dadc",
   "theme_color": "#a8dadc",
