@@ -43,6 +43,7 @@ const urlParser = {
 
   async renderDetailData (id) {
     const data = await getDetailRestaurant(id)
+    console.log(data)
     return detailPage(data)
   },
 

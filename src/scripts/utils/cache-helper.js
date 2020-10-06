@@ -42,6 +42,7 @@ const cacheHelper = {
 
   async _addCache (request) {
     const cache = await this._openCache()
+    console.log(request.url)
     cache.add(request)
   }
 

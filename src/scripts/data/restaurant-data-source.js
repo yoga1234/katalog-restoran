@@ -7,13 +7,16 @@ const getListRestaurant = async () => {
 }
 
 const getDetailRestaurant = async (id) => {
-  const response = await fetch(CONFIG.BASE_URL + CONFIG.DETAIL_URL + id)
-  const responseJson = await response.json()
-  return responseJson
+  try {
+    const response = await fetch(CONFIG.BASE_URL + CONFIG.DETAIL_URL + id)
+    const responseJson = await response.json()
+    return responseJson
+  } catch {
+    return undefined
+  }
 }
 
 const addNewReview = async (data) => {
-  console.log('restaurant data source fetch')
   const sendRequest = await fetch(CONFIG.BASE_URL + CONFIG.ADD_REVIEW_URL, {
     method: 'post',
     headers: {
