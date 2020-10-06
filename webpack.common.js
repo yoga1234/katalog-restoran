@@ -23,10 +23,17 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file-loader'
+      },
+      {
+        test: /\.(svg|eot|woff|ttf|svg|woff2)$/,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]'
+            }
           }
         ]
       }

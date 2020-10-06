@@ -1,21 +1,10 @@
 import CONFIG from '../../globals/config'
-import paginationSystem from '../../utils/pagination-system'
 import descriptionShorter from '../../utils/description-shorter'
 
-const homePage = (data, pageInformation) => {
-  let page
+const homePage = async (data, pageInformation) => {
   let homeReturn = ''
-  let dataStart = 1
-  let dataCounter = 1
-  let dataShow = 1
-
-  pageInformation = pageInformation || { activePage: 1, pageDestination: 1 }
-
-  const { activePage, pageDestination } = pageInformation
-  const maxDataToShow = 9
 
   if (pageInformation === 'empty') {
-    page = paginationSystem('empty')
     homeReturn = `
     <div class="loading-animation">
       <div class="loading-data"></div>
@@ -25,40 +14,24 @@ const homePage = (data, pageInformation) => {
     </div>
     `
   } else {
-    if (activePage < pageDestination) {
-      for (let i = 1; i < pageDestination; i++) {
-        dataStart = dataStart + maxDataToShow
-      }
-    } else if (activePage > pageDestination) {
-      dataStart = (((maxDataToShow * pageDestination) - maxDataToShow) + dataStart)
-    }
-    page = paginationSystem(data.count, activePage, pageDestination)
     homeReturn += `
       <div class="home-content">
     `
 
     for (const restaurant of data.restaurants) {
-      if (dataStart <= dataCounter) {
-        if (dataShow <= maxDataToShow) {
-          restaurant.description = descriptionShorter(restaurant.description)
-          homeReturn += `
-          <article class="card-article" data-number-item="${dataCounter}/${activePage}">
-            <figure>
-              <img class="article-image" src="${CONFIG.IMAGE_SMALL}${restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}">
-            </figure>
-            <h3 class="article-title"><a href="#detail/${restaurant.id}" class="restaurant-detail">${restaurant.name}</a></h3>
-            <p class="article-desc">${restaurant.description}</p>
-            <div class="article-footer">
-              <p class="article-footer-item-1">${restaurant.city}</p>
-              <p class="article-footer-item-2">Rating: ${restaurant.rating}/5</p>
-            </div>
-          </article>`
-          dataShow++
-        } else {
-          break
-        }
-      }
-      dataCounter++
+      restaurant.description = descriptionShorter(restaurant.description)
+      homeReturn += `
+        <article class="card-article">
+          <figure>
+            <img class="article-image" src="${CONFIG.IMAGE_SMALL + restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}" crossorigin="anonymous">
+          </figure>
+          <h3 class="article-title"><a href="#detail/${restaurant.id}" class="restaurant-detail">${restaurant.name}</a></h3>
+          <p class="article-desc">${restaurant.description}</p>
+          <div class="article-footer">
+            <p class="article-footer-item-1">${restaurant.city}</p>
+            <p class="article-footer-item-2">Rating: ${restaurant.rating}/5</p>
+          </div>
+        </article>`
     }
     homeReturn += `
       </div>
@@ -78,9 +51,6 @@ const homePage = (data, pageInformation) => {
     <section id="main-container" class="article-container">
       <h2 class="section-header">Restaurant Registered</h2>
       ${homeReturn}
-      <div class="pagination">
-        ${page}
-      </div>
     </section>
     <section class="our-service">
       <hr class="first-hr">

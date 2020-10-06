@@ -17,7 +17,6 @@ const cacheHelper = {
     const response = await caches.match(request)
 
     if (response) {
-      this._fetchRequest(request)
       return response
     }
     return this._fetchRequest(request)
@@ -29,8 +28,10 @@ const cacheHelper = {
 
   async _fetchRequest (request) {
     const response = await fetch(request)
+    if (response.status === 0) {
+      console.log('response is 0')
+    }
 
-    // jika error
     if (!response || response.status !== 200) {
       return response
     }

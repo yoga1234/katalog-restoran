@@ -13,6 +13,7 @@ const getDetailRestaurant = async (id) => {
 }
 
 const addNewReview = async (data) => {
+  console.log('restaurant data source fetch')
   const sendRequest = await fetch(CONFIG.BASE_URL + CONFIG.ADD_REVIEW_URL, {
     method: 'post',
     headers: {
