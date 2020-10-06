@@ -25,7 +25,7 @@ const homePage = async (data, pageInformation) => {
           <figure>
             <img class="article-image" src="${CONFIG.IMAGE_SMALL + restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}" crossorigin="anonymous">
           </figure>
-          <h3 class="article-title"><a href="#detail/${restaurant.id}" class="restaurant-detail">${restaurant.name}</a></h3>
+          <h3 class="article-title"><a href="/#detail/${restaurant.id}" class="restaurant-detail">${restaurant.name}</a></h3>
           <p class="article-desc">${restaurant.description}</p>
           <div class="article-footer">
             <p class="article-footer-item-1">${restaurant.city}</p>
