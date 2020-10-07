@@ -3,12 +3,8 @@ import { checkFavorite } from '../../utils/favorite-restaurant-initiator'
 import CONFIG from '../../globals/config'
 
 const detailPage = async (data) => {
-  console.log(data)
-  // if (data.error === true || data === undefined) {
-  //   return `<h2 class="detail-not-found">Oops, data is ${data.message}.</h2>`
-  // }
   if (data === undefined) {
-    return `<h2 class="detail-not-found">Oops, data is cannot be found.</h2>`
+    return '<h2 class="detail-not-found">Oops, data is cannot be found.</h2>'
   }
 
   const checkFavoriteData = await checkFavorite(data.restaurant.id)
@@ -22,7 +18,7 @@ const detailPage = async (data) => {
     <section class="detail-container">
       <a class="detail-back-button" href="#home">Back</a>
       <h2 class="detail-restaurant-name">${data.restaurant.name}</h2>
-      <img class="detail-restaurant-image" src="${CONFIG.IMAGE_lARGE + data.restaurant.pictureId}" crossorigin="anonymous">
+      <img class="detail-restaurant-image" src="${CONFIG.IMAGE_lARGE + data.restaurant.pictureId}" crossorigin="anonymous" alt="kafe dengan nama ${data.restaurant.name}">
       <div class="detail-description">
         <h3 class="detail-description-header">Description</h3>
         <p class="detail-description-text">${data.restaurant.description}</p>

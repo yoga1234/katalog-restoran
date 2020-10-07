@@ -1,5 +1,4 @@
 import CONFIG from '../../globals/config'
-import descriptionShorter from '../../utils/description-shorter'
 
 const favoritePage = (data) => {
   let favoriteReturn = ''
@@ -9,7 +8,6 @@ const favoritePage = (data) => {
   }
 
   data.forEach(restaurant => {
-    restaurant.description = descriptionShorter(restaurant.description)
     favoriteReturn += `
     <article class="card-article">
       <figure>

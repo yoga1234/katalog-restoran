@@ -1,5 +1,4 @@
 import CONFIG from '../../globals/config'
-import descriptionShorter from '../../utils/description-shorter'
 
 const homePage = async (data, pageInformation) => {
   let homeReturn = ''
@@ -19,7 +18,6 @@ const homePage = async (data, pageInformation) => {
     `
 
     for (const restaurant of data.restaurants) {
-      restaurant.description = descriptionShorter(restaurant.description)
       homeReturn += `
         <article class="card-article">
           <figure>

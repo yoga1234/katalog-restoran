@@ -299,6 +299,7 @@ figcaption {
     transition: .25s ease all;
 }
 .restaurant-detail {
+    padding: 15px;
     text-decoration: none;
     color: #000;
 }
@@ -315,10 +316,15 @@ figcaption {
     width: 100%;
     text-align: justify;
     line-height: 1.5;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     transition: .25s ease all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .article-desc:focus {
     outline: none;

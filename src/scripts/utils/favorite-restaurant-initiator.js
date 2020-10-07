@@ -33,7 +33,6 @@ const addToFavorite = () => {
   })
 }
 
-
 const checkFavorite = async () => {
   const idDetail = window.location.href.split('/')[4]
   let addToFavoriteButton = ''
