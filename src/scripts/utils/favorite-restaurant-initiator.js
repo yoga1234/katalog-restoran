@@ -2,6 +2,7 @@ import { getDetailRestaurant } from '../data/restaurant-data-source'
 import favoriteRestaurantDB from '../data/favorite-restaurant'
 
 const changeFavoriteText = async (button, id) => {
+  console.log(button)
   const dataRestaurant = await favoriteRestaurantDB.getRestaurant(id)
   if (dataRestaurant === undefined) {
     button.classList.add('add-to-favorite-text')
@@ -33,8 +34,7 @@ const addToFavorite = () => {
   })
 }
 
-const checkFavorite = async () => {
-  const idDetail = window.location.href.split('/')[4]
+const checkFavorite = async (idDetail) => {
   let addToFavoriteButton = ''
 
   const dataRestaurant = await favoriteRestaurantDB.getRestaurant(idDetail)
@@ -51,4 +51,4 @@ const getAllRestaurantData = () => {
   console.log('this is get all restaurant function')
 }
 
-export { addToFavorite, checkFavorite, getAllRestaurantData }
+export { addToFavorite, checkFavorite, getAllRestaurantData, changeFavoriteText }
