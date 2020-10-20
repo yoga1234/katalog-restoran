@@ -1,4 +1,4 @@
-import CONFIG from '../../globals/config'
+import cardCreator from '../../utils/card-creator'
 
 const homePage = async (data, pageInformation) => {
   let homeReturn = ''
@@ -13,27 +13,7 @@ const homePage = async (data, pageInformation) => {
     </div>
     `
   } else {
-    homeReturn += `
-      <div class="home-content">
-    `
-
-    for (const restaurant of data.restaurants) {
-      homeReturn += `
-        <article class="card-article">
-          <figure>
-            <img class="article-image" src="${CONFIG.IMAGE_SMALL + restaurant.pictureId}" alt="Kafe dengan nama ${restaurant.name}" crossorigin="anonymous">
-          </figure>
-          <h3 class="article-title"><a href="/#detail/${restaurant.id}" class="restaurant-detail">${restaurant.name}</a></h3>
-          <p class="article-desc">${restaurant.description}</p>
-          <div class="article-footer">
-            <p class="article-footer-item-1">${restaurant.city}</p>
-            <p class="article-footer-item-2">Rating: ${restaurant.rating}/5</p>
-          </div>
-        </article>`
-    }
-    homeReturn += `
-      </div>
-    `
+    homeReturn += cardCreator(data.restaurants)
   }
 
   return `
