@@ -3,7 +3,7 @@ import CONFIG from '../globals/config'
 const cacheHelper = {
   async cachingAppShell (requests) {
     const cache = await this._openCache()
-    cache.addAll(requests)
+    await cache.addAll(requests)
   },
 
   async deleteOldCache () {
@@ -42,7 +42,6 @@ const cacheHelper = {
 
   async _addCache (request) {
     const cache = await this._openCache()
-    console.log(request.url)
     cache.add(request)
   }
 
